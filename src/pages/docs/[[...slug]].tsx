@@ -4,6 +4,7 @@ import { InferGetStaticPropsType, GetStaticPropsContext } from 'next';
 import { useRouter } from 'next/router';
 import { useLiveReload, useMDXComponent } from 'next-contentlayer/hooks';
 import { allDocs } from 'contentlayer/generated';
+import Zoom from 'react-medium-image-zoom';
 
 import { DocsHeader } from '../../components/docs/DocsHeader';
 import { Video } from '../../components/common/Video';
@@ -78,6 +79,7 @@ const mdxComponents = {
   OptionDescription,
   Icon,
   RaydiantIcon,
+  Zoom,
 };
 
 const Page = (props: InferGetStaticPropsType<typeof getStaticProps>) => {

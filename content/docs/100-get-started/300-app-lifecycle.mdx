@@ -11,19 +11,34 @@ Depending on if there is one or many presentations in the playlist, your app’s
 
 ## Single Presentation
 
+<div>
+  <Zoom className="img-light">
+    <img className="img-light" src="/single-presentation-lifecycle-light.excalidraw.png" style={{ maxWidth: 400 }} />
+  </Zoom>
+  <Zoom overlayBgColorStart="rgba(0, 0, 0, 0)" overlayBgColorEnd="rgba(0, 0, 0, 0.95)">
+    <img className="img-dark" src="/single-presentation-lifecycle-dark.excalidraw.png" style={{ maxWidth: 400 }} />
+  </Zoom>
+</div>
+
+
 When there is only a single presentation in a playlist, your app will be loaded in the background when the device starts.
 
 When the device detects that the app has finished loading it will become visible on the screen.
 
-[TODO: Image of single presentation lifecycle]
-
 ## Multiple Presentations
+
+<div>
+  <Zoom>
+    <img className="img-light" src="/multiple-presentations-lifecycle-light.excalidraw.png" />
+  </Zoom>
+  <Zoom overlayBgColorStart="rgba(0, 0, 0, 0)" overlayBgColorEnd="rgba(0, 0, 0, 0.95)">
+    <img className="img-dark" src="/multiple-presentations-lifecycle-dark.excalidraw.png" />
+  </Zoom>
+</div>
 
 When there are multiple presentations in a playlist, your app will be immediately loaded in the background when it’s the _next_ presentation in the playlist.
 
 When the _current_ presentation is complete and your app has finished loading it will become visible on the screen.
-
-[TODO: Image of multiple presentation lifecycle]
 
 <Callout>**Upcoming feature:** Hook into the playlist lifecycle to know when your app is running in the background and when it becomes visible.</Callout>
 

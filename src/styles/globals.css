@@ -64,3 +64,15 @@
 .MuiSvgIcon-root {
   font-size: 1.25rem !important;
 }
+
+.dark .img-light {
+  display: none;
+}
+
+.img-dark {
+  display: none;
+}
+
+.dark .img-dark {
+  display: block;
+}

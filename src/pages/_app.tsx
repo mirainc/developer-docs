@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app';
 
 import '../styles/globals.css';
+import 'react-medium-image-zoom/dist/styles.css';
 
 import { ColorSchemeProvider } from '../components/ColorSchemeContext';
 
