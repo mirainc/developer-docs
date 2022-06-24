@@ -10,7 +10,7 @@ Get started using [Toast](https://pos.toasttab.com/) with the On-Brand Menu API
 First we need to setup a Toast source for the On-Brand Menu API. Sign in to the Developer Portal and navigate to the [API Keys](https://developers.staging.raydiant.com/api-keys) section:
 
 1. Click the “Create New…” button <RaydiantIcon name="add" />.
-2. Select “API Source” [TODO: source icon].
+2. Select “API Source” <RaydiantIcon name="api-sources" />.
 3. Name your new API Source to “My Toast Source”.
 4. From the “Source” dropdown, select “Toast”.
 5. Copy the unique location ID for your Toast source to the clipboard.
@@ -22,7 +22,7 @@ First we need to setup a Toast source for the On-Brand Menu API. Sign in to the 
 8. Click “Add Integrations”.
 9. Search for “Raydiant” and click “Add New”.
 10. Select the location(s) you’d like to connect to the On-Brand Menu API.
-11. Click the settings icon [TODO: settings icon] next to the Raydiant integration from the [My Integrations](https://www.toasttab.com/restaurants/admin/integrations/my-integrations) page.
+11. Click the settings icon <RaydiantIcon name="toast-settings" /> next to the Raydiant integration from the [My Integrations](https://www.toasttab.com/restaurants/admin/integrations/my-integrations) page.
 12. Paste the location ID from step 5 into the Location ID field and click “Apply”
 
     <img
@@ -46,9 +46,9 @@ Toast menu groups and items nested up to 4-levels deep will be returned from the
 
 ## Modifiers
 
-Only size-based modifiers will be returned from the On-Brand Menu API.
+Toast sized-based modifiers will be returned as sub-items from the On-Brand Menu API.
 
-<Callout>The On-Brand Menu API does not currently support groups of sub-items. Toastmodifier groups will be flattened into a single list of sub-items.</Callout>
+<Callout>The On-Brand Menu API does not support groups of sub-items. Toast modifier groups will be flattened into a single list of sub-items.</Callout>
 
 ## Tags
 

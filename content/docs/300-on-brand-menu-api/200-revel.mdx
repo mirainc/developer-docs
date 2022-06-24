@@ -23,19 +23,19 @@ Revel products will be returned as menu items via the On-Brand Menu API.
 
 Revel modifiers will be returned as sub-items from the On-Brand Menu API. Sub-items are items that do not belong to a group but are instead associated with another menu item.
 
-<Callout>The On-Brand Menu API does not currently support groups of sub-items. Revel modifier classes attached to a product will be flattened into a single list of sub-items.</Callout>
+<Callout>The On-Brand Menu API does not support groups of sub-items. Revel modifier classes attached to a product will be flattened into a single list of sub-items.</Callout>
 
 ## Calories
 
-Revel does not natively support calories on products but you can use the “Alternative Lookup” field to set calorie data.
+Revel does not natively support calories on products but you can use the alternative lookup field to set calorie data.
 
 The On-Brand Menu API looks for an alternative lookup value with the syntax `calories:**number**`. For example, to set the calories of an item to 110, add an alternative lookup value of `calories:110`.
 
-Calories are only supported on products since Revel does not support “Alternate Lookup” on modifiers.
+Calories are only supported on products since Revel does not support alternative lookup on modifiers.
 
 ## Tags
 
-Values in the “Alternative Lookup” field of a Revel product are converted to menu item tags in the On-Brand Menu API. You can use these tags to set custom data on an item like `featured` or `location:Napa Valley`.
+Values in the alternative lookup field of a Revel product are converted to menu item tags in the On-Brand Menu API. You can use these tags to set custom data on an item like `featured` or `location:Napa Valley`.
 
 Provide a comma-separated list of values as the “Third Party ID” field to set menu group tags. For example, a third party ID value of `entrees, featured` on a category will be converted to two tags (`entrees` and `featured`) on the group.
 

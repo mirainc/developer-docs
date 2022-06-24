@@ -12,7 +12,7 @@ Inputs allow users to customize your app in the Raydiant Dashboard, for example:
 
 The URL template of your app receives the values of its inputs by specifying where to inject them using the syntax `:input-id`:
 
-```jsx
+```bash
 https://my-weather-app.com?location=:location
 https://my-news-app.com/:channel
 https://my-menus-app.com/juices?qrcode=:qrcode
@@ -20,7 +20,7 @@ https://my-menus-app.com/juices?qrcode=:qrcode
 
 When users customize your app in the Raydiant Dashboard the input values are injected into the URL template to render the resulting URL:
 
-```jsx
+```bash
 https://my-weather-app.com?location=New York
 https://my-news-app.com/politics
 https://my-menus-app.com/juices?qrcode=true

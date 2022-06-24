@@ -9,6 +9,11 @@ Returns the groups for the authenticated API Key. Query menu groups by menu ID, 
 
 Set the `X-API-Key: [API Key]` header.
 
+```bash
+curl --request GET 'https://menu-api.raydiant.com/v1/groups?tags=burgers&menus=[Menu ID]' \
+     --header 'X-API-Key: [API Key]'
+```
+
 ### Query Parameters
 
 <OptionsTable>
@@ -49,12 +54,6 @@ Set the `X-API-Key: [API Key]` header.
     How many levels of child groups and item modifiers to traverse (max: 4, default: 1)
   </OptionDescription>
 </OptionsTable>
-
-
-```bash
-curl --request GET 'https://menu-api.raydiant.com/v1/groups?tags=burgers&menus=[Menu ID]' \
-     --header 'X-API-Key: [API Key]'
-```
 
 ## Response
 
