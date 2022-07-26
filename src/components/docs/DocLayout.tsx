@@ -18,7 +18,7 @@ interface DocLayoutProps {
 export const DocLayout: FC<DocLayoutProps> = ({ children, ...customMeta }) => {
   const router = useRouter();
 
-  const baseUrl = config.raydiantUrl;
+  const baseUrl = config.raydiantDevelopersUrl;
 
   const meta = {
     title: 'Raydiant Developer Docs',
@@ -26,10 +26,9 @@ export const DocLayout: FC<DocLayoutProps> = ({ children, ...customMeta }) => {
       "Raydiant's application development environment is built for web developers. No proprietary markup languages or programming environments to learn.",
     url: customMeta.urlPath ? `${baseUrl}${customMeta.urlPath}` : baseUrl,
     name: 'Raydiant Developer Docs',
-    // TODO: Add meta image
-    // image: customMeta.imagePath
-    //   ? `${baseUrl}${customMeta.imagePath}`
-    //   : `${baseUrl}/images/beta-launch-post-meta.png`,
+    image: customMeta.imagePath
+      ? `${baseUrl}/docs/${customMeta.imagePath}`
+      : `${baseUrl}/docs/meta.jpg`,
     type: 'website',
     ...customMeta,
   };
@@ -52,13 +51,11 @@ export const DocLayout: FC<DocLayoutProps> = ({ children, ...customMeta }) => {
         <meta property="og:site_name" content={meta.name} />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
-        {/* TODO: Add meta image */}
-        {/* <meta property="og:image" content={meta.image} /> */}
+        <meta property="og:image" content={meta.image} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
-        {/* TODO: Add meta image */}
-        {/* <meta name="twitter:image" content={meta.image} /> */}
+        <meta name="twitter:image" content={meta.image} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
