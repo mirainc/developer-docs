@@ -11,7 +11,7 @@ export const OptionsTable: FC<{ children: ReactNode }> = ({ children }) => {
 
 export const OptionTitle: FC<{ children: ReactNode }> = ({ children }) => {
   return (
-    <div className="option-title hyphens not-prose -mt-px border-t border-gray-200 bg-gray-50 p-4 pt-5 dark:border-gray-800 dark:bg-gray-900/75 md:border-r lg:border-r-0 xl:border-r">
+    <div className="option-title hyphens not-prose -mt-px border-t border-gray-200 bg-gray-50 p-4 pt-5 dark:border-gray-800 dark:bg-gray-900/75 md:border-r lg:border-r-0 xl:border-r md:col-span-2">
       {children}
     </div>
   );
@@ -21,7 +21,7 @@ export const OptionDescription: FC<{ children: ReactNode }> = ({
   children,
 }) => {
   return (
-    <div className="option-description -mt-px border-t border-gray-200 px-4 pb-2 dark:border-gray-800 md:col-span-3 lg:col-span-1 xl:col-span-3">
+    <div className="option-description -mt-px border-t border-gray-200 px-4 pb-2 dark:border-gray-800 md:col-span-2">
       {children}
     </div>
   );

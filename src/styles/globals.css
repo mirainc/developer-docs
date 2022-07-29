@@ -59,16 +59,6 @@
   .scroll-padding {
     scroll-padding-top: 150px;
   }
-
-  /* Prevent first column from overflowing for specific viewport ranges */
-  @media (min-width: 1440px) {
-    .options-table {
-      .option-title,
-      .option-description {
-        @apply col-span-2;
-      }
-    }
-  }
 }
 
 .MuiSvgIcon-root {
