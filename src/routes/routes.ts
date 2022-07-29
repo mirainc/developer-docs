@@ -28,3 +28,8 @@ export const wholeFoodsMenu = createPath(
   '/docs/get-started/sample-apps/whole-foods-menu',
   () => `/docs/get-started/sample-apps/whole-foods-menu`,
 );
+
+export const starbucksMenu = createPath(
+  '/docs/get-started/sample-apps/starbucks-menu',
+  () => `/docs/get-started/sample-apps/starbucks-menu`,
+);
