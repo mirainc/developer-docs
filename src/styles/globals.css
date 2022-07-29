@@ -61,7 +61,7 @@
   }
 
   /* Prevent first column from overflowing for specific viewport ranges */
-  @media (min-width: 1440px) and (max-width: 1540px) {
+  @media (min-width: 1440px) {
     .options-table {
       .option-title,
       .option-description {
