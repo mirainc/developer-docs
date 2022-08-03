@@ -1,0 +1,95 @@
+---
+title: Starbucks Menu
+excerpt: A Starbucks inspired menu, built with NextJS and hosted on Vercel.
+---
+
+A Starbucks inspired menu powered by our On-Brand Menu API, built with NextJS and hosted on Vercel.
+
+![Starbucks Preview](/docs-static/starbucks-menu-preview.png)
+
+## Repository
+
+[https://github.com/mirainc/starbucks-menu-app](https://github.com/mirainc/starbucks-menu-app)
+
+## URL Template
+
+```bash
+https://starbucks-menu-app.vercel.app/?menu=:menu&espressoAndCoffeeSubheading=:espressoAndCoffeeSubheading&espressoAndCoffeeBottomText=:espressoAndCoffeeBottomText&footnote=:footnote
+```
+
+[Preview](https://starbucks-menu-app.vercel.app/?menu=3404a063-2bbe-4473-bb1b-cac3c7e1d14e)
+
+## Inputs
+
+<OptionsTable>
+  <OptionTitle>
+    `menu`
+  </OptionTitle>
+  <OptionDescription>
+    *Select*
+
+    **Options:** Use the menu IDs returned from [`GET /v1/menus`](/docs/on-brand-menu-api/reference/get-menus) as the value for each option.
+  </OptionDescription>
+  <OptionTitle>
+    `espressoAndCoffeeSubheading`
+  </OptionTitle>
+  <OptionDescription>
+    *Text*
+  </OptionDescription>
+  <OptionTitle>
+    `espressoAndCoffeeBottomText`
+  </OptionTitle>
+  <OptionDescription>
+    *Text*
+  </OptionDescription>
+  <OptionTitle>
+    `footnote`
+  </OptionTitle>
+  <OptionDescription>
+    *Text*
+  </OptionDescription>
+</OptionsTable>
+
+## Assets
+
+<OptionsTable>
+  <OptionTitle>
+    Thumbnail
+
+  </OptionTitle>
+  <OptionDescription>
+    <img alt="Starbucks Menu Thumbnail" src="/docs-static/starbucks-menu-thumbnail.jpeg" style={{ maxWidth: 200 }} />
+
+    <p>
+      <a href="/docs-static/starbucks-menu-thumbnail.jpeg" download>Download</a>
+    </p>
+  </OptionDescription>
+  <OptionTitle>
+    Icon
+  </OptionTitle>
+  <OptionDescription>
+    <img alt="Starbucks Menu Icon" src="/docs-static/starbucks-menu-icon.png" style={{ maxWidth: 40 }} />
+
+    <p>
+      <a href="/docs-static/starbucks-menu-icon.png" download>Download</a>
+    </p>
+  </OptionDescription>
+</OptionsTable>
+
+
+
+## Deploy
+
+To deploy your own Starbucks Menu app you’ll need an [On-Brand Menu API key](/docs/on-brand-menu-api/api-keys).
+
+Click the below “Deploy" button to deploy the Starbucks Menu app to your own Vercel account.
+
+<a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmirainc%2Fstarbucks-menu-app&env=RAYDIANT_MENU_API_KEY&redirect-url=https%3A%2F%2Fdevelopers.raydiant.com%2Fdocs%2Fget-started%2Fsample-apps%2Fstarbucks-menu">
+  <img src="https://vercel.com/button" alt="Deploy with Vercel" />
+</a>
+
+## Next Steps
+
+- [Learn more about the On-Brand Menu API](/docs/on-brand-menu-api)
+- [Check out our collection of sample apps](/docs/get-started/sample-apps)
+- [Build your first Raydiant app](/docs/get-started/build-an-ap)

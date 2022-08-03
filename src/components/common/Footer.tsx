@@ -25,6 +25,7 @@ const content = {
       elements: [
         { label: 'Simple Weather  ', url: routes.simpleWeather() },
         { label: 'Whole Foods Menu', url: routes.wholeFoodsMenu() },
+        { label: 'Starbucks Menu', url: routes.starbucksMenu() },
       ],
     },
     {
