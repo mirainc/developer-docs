@@ -1,0 +1,45 @@
+---
+title: Multi-select
+excerpt: Select multiple values from a list of options.
+---
+
+Add a _multi-select_ input to your app to allow users to select multiple values from a list of options.
+
+## Options
+
+Add options to your _multi-select_ input and set a default option. The input ID in the URL template for your _multi-select_ input is replaced with the selected option’s values.
+
+The array of options are JSON stringified and URI encoded. The values are available via query params.
+
+**URL**
+```
+?myQueryParameter=%5B%22option-a%22%2C%22option-b%22%5D&myOtherQueryParameter=...
+```
+
+Make sure to parse the query parameter in your app code.
+
+**App**
+```TypeScript
+{ myQueryParameter } = getQueryParams();
+
+const multiSelectOptions = JSON.parse(myQueryParameter)
+// [ 'option-a', 'option-b' ]
+```
+
+<Callout>**Upcoming feature:** Fetch options from a remote source.</Callout>
+
+## Validation
+
+The _multi-select_ input supports the following validation options:
+
+- **Required:** Prevent your app from rendering until an input value is provided.
+
+## Appearance
+
+Add helper text to provide helpful context or link to a support article for additional instructions.
+
+## Next Steps
+
+- [Check out the Select input](/docs/inputs/select)
+- [Check out the Button Group input](/docs/inputs/button-group)
+- [Browse the available input types](/docs/inputs)
