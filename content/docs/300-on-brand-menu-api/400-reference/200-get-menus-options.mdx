@@ -1,0 +1,31 @@
+---
+title: GET /v1/menus/options
+excerpt: Returns a tuple, formatted for use with Remote Options for the authenticated API Key.
+---
+
+Returns a tuple, formatted for use with Remote Options for the authenticated API Key.
+
+## Request
+
+Set the `X-API-Key: [API Key]` header.
+
+```bash
+curl --request GET 'https://menu-api.raydiant.com/v1/menus/options' \
+     --header 'X-API-Key: [API Key]'
+```
+
+## Response
+
+```json
+[
+  {
+    "label": "Test Menu (Location Name)",
+    "value": "cf499066-a415-4dc3-bcce-e5482357b512",
+  }
+]
+```
+
+## Next Steps
+
+- [Read the full On-Brand Menu API reference](/docs/on-brand-menu-api/reference)
+- [Learn how to create an API key and authenticate](/docs/on-brand-menu-api/api-keys)
