@@ -20,7 +20,7 @@ Make sure to parse the query parameter in your app code.
 
 **App**
 ```TypeScript
-{ myQueryParameter } = getQueryParams();
+const { myQueryParameter } = getQueryParams();
 
 const multiSelectOptions = JSON.parse(myQueryParameter)
 // [ 'option-a', 'option-b' ]
