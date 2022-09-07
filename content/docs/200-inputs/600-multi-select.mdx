@@ -17,6 +17,19 @@ Select the "manual" options type, then add options to your _multi-select_ input 
 ### Remote Options
 
 Select the "remote" options type, then specify the options URL and any required headers.
+The API must return a JSON response in the following format.
+```json
+[
+  {
+    "label": "my label",
+    "value": "my-value",
+  },
+  {
+    "label": "my second label",
+    "value": "my-second-value",
+  }
+]
+```
 
 ## Return Format
 
