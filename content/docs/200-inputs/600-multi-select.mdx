@@ -31,6 +31,21 @@ The API must return a JSON response in the following format.
 ]
 ```
 
+A default option can be set by setting `default` to `true` for any given option.
+```json
+[
+  {
+    "label": "my label",
+    "value": "my-value",
+  },
+  {
+    "label": "my second label",
+    "value": "my-second-value",
+    "default": "true"
+  }
+]
+```
+
 ## Return Format
 
 The array of options are JSON stringified and URI encoded. The values are available via query params.

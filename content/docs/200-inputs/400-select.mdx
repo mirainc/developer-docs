@@ -32,6 +32,21 @@ The API must return a JSON response in the following format.
 ]
 ```
 
+A default option can be set by setting `default` to `true` for any given option.
+```json
+[
+  {
+    "label": "my label",
+    "value": "my-value",
+  },
+  {
+    "label": "my second label",
+    "value": "my-second-value",
+    "default": "true"
+  }
+]
+```
+
 ## Validation
 
 The _select_ input supports the following validation options:
