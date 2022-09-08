@@ -7,7 +7,51 @@ Add a _multi-select_ input to your app to allow users to select multiple values 
 
 ## Options
 
-Add options to your _multi-select_ input and set a default option. The input ID in the URL template for your _multi-select_ input is replaced with the selected option’s values.
+Multi-select options can be added manually or pulled from a remote source.
+The input ID in the URL template for your _multi-select_ input is replaced with the selected option’s values.
+
+### Manual Options
+
+Select the "manual" options type, then add options to your _multi-select_ input and set a default option.
+
+### Remote Options
+
+Select the "remote" options type, then specify the options URL and any required headers.
+The API must return a JSON response in the following format.
+```json
+[
+  {
+    "label": "my label",
+    "value": "my-value",
+  },
+  {
+    "label": "my second label",
+    "value": "my-second-value",
+  }
+]
+```
+
+A default option can be set by setting `default` to `true` for any given option.
+```json
+[
+  {
+    "label": "my label",
+    "value": "my-value",
+  },
+  {
+    "label": "my second label",
+    "value": "my-second-value",
+    "default": true
+  },
+  {
+    "label": "my third label",
+    "value": "my-third-value",
+    "default": true
+  }
+]
+```
+
+## Return Format
 
 The array of options are JSON stringified and URI encoded. The values are available via query params.
 
@@ -25,8 +69,6 @@ const { myQueryParameter } = getQueryParams();
 const multiSelectOptions = JSON.parse(myQueryParameter)
 // [ 'option-a', 'option-b' ]
 ```
-
-<Callout>**Upcoming feature:** Fetch options from a remote source.</Callout>
 
 ## Validation
 
