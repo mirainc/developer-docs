@@ -1,6 +1,27 @@
 @import url('./tailwind.css');
 @import './hljs-github-dark.css';
 
+@font-face {
+  font-family: 'Gellix';
+  src: url('https://fonts.raydiant.com/Gellix-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gellix';
+  src: url('https://fonts.raydiant.com/Gellix-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gellix';
+  src: url('https://fonts.raydiant.com/Gellix-Bold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
 @layer base {
   body {
     @apply h-full bg-white text-slate-500 antialiased dark:bg-gray-950 dark:text-slate-400;
