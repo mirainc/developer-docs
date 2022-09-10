@@ -35,7 +35,7 @@ const NavLink: FC<NavLinkProps> = ({
           ? `${
               level == 0 ? 'font-medium' : 'font-normal'
             } bg-sky-100/50 text-sky-900 dark:bg-sky-500/20 dark:text-sky-100`
-          : `hover:bg-gray-50 dark:hover:bg-gray-900 ${
+          : `hover:bg-zinc-50 dark:hover:bg-zinc-900 ${
               level == 0
                 ? 'font-medium text-slate-600 hover:text-slate-700 dark:text-slate-300 dark:hover:text-slate-200'
                 : 'font-normal hover:text-slate-600 dark:hover:text-slate-300'
@@ -114,7 +114,7 @@ const Tree: FC<TreeProps> = ({ tree, level, activePath }) => {
     <div
       className={classNames(
         'ml-3 space-y-2 pl-3',
-        level > 0 ? 'border-l border-gray-200 dark:border-gray-800' : '',
+        level > 0 ? 'border-l border-zinc-200 dark:border-zinc-800' : '',
       )}
     >
       {tree.map((treeNode, index) => (

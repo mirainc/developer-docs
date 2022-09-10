@@ -20,11 +20,11 @@ export const Card: FC<CardProps> = ({
       className={classNames(
         'overflow-hidden rounded-2xl border',
         dark
-          ? 'border-gray-800 bg-gray-900'
-          : 'border-gray-100 bg-gray-50 dark:border-gray-800 dark:bg-gray-900',
+          ? 'border-zinc-800 bg-zinc-900'
+          : 'border-zinc-100 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900',
         shadow &&
           `shadow-lg ${
-            dark ? 'shadow-gray-900' : 'shadow-gray-100 dark:shadow-gray-900'
+            dark ? 'shadow-zinc-900' : 'shadow-zinc-100 dark:shadow-zinc-900'
           }`,
         className,
       )}

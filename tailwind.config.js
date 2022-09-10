@@ -1,7 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
-const colors = {};
-
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}', './content/**/*.{md,mdx}'],
   darkMode: 'class',
@@ -11,9 +9,8 @@ module.exports = {
         sans: ['Gellix', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        gray: {
-          850: '#18202F',
-          950: '#000a14',
+        zinc: {
+          950: '#101010',
         },
         sky: {
           // Generated from https://www.tailwindshades.com/#color=220.09478672985782%2C99.06103286384977%2C41.76470588235294&step-up=10&step-down=7&hue-shift=0&name=science-blue&base-stop=6&overrides=e30%3D

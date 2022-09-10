@@ -54,7 +54,7 @@ const NavLink: FC<NavLinkProps> = ({ label, hideLabel = false, icon, url }) => {
         className={`group flex h-8 items-center rounded-md bg-transparent px-3 text-sm font-medium leading-none ${
           active
             ? 'bg-sky-100/50 text-sky-900 dark:bg-sky-500/20 dark:text-sky-100'
-            : 'text-slate-600 hover:bg-gray-50 hover:text-slate-700 dark:text-slate-300 dark:hover:bg-gray-900 dark:hover:text-slate-200'
+            : 'text-slate-600 hover:bg-zinc-50 hover:text-slate-700 dark:text-slate-300 dark:hover:bg-zinc-900 dark:hover:text-slate-200'
         }`}
         target={isExternalUrl(url) ? '_blank' : undefined}
         rel={isExternalUrl(url) ? 'noreferrer' : undefined}
@@ -74,7 +74,7 @@ export const MainNavigation = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed z-50 w-full border-b border-gray-200 bg-white bg-opacity-90 backdrop-blur backdrop-filter dark:border-gray-800 dark:bg-gray-950">
+    <header className="fixed z-50 w-full border-b border-zinc-200 bg-white bg-opacity-90 backdrop-blur backdrop-filter dark:border-zinc-800 dark:bg-zinc-950">
       <div className="mx-auto flex h-16 w-full max-w-screen-2xl items-center justify-between px-4 md:px-8 lg:px-16">
         <div className="flex items-center space-x-2.5">
           <Link href={routes.getStarted()}>
@@ -96,8 +96,8 @@ export const MainNavigation = () => {
             </span>
           </button>
           {open && (
-            <div className="fixed inset-0 top-[65px] z-50 h-screen bg-gray-950/10 pb-20 backdrop-blur-lg backdrop-filter dark:bg-gray-950/50">
-              <nav className="absolute right-0 h-full divide-y divide-gray-200 border-l border-gray-200 bg-white p-8 dark:divide-gray-800 dark:border-gray-800 dark:bg-gray-950">
+            <div className="fixed inset-0 top-[65px] z-50 h-screen bg-zinc-950/10 pb-20 backdrop-blur-lg backdrop-filter dark:bg-zinc-950/50">
+              <nav className="absolute right-0 h-full divide-y divide-zinc-200 border-l border-zinc-200 bg-white p-8 dark:divide-zinc-800 dark:border-zinc-800 dark:bg-zinc-950">
                 <div className="flex flex-col items-end space-y-2 pb-8">
                   <div className="mb-2"></div>
                   {navLinks.map(({ label, url }, index) => (
@@ -125,7 +125,7 @@ export const MainNavigation = () => {
           )}
         </div>
 
-        <nav className="hidden items-center divide-x divide-gray-200 dark:divide-gray-800 lg:flex">
+        <nav className="hidden items-center divide-x divide-zinc-200 dark:divide-zinc-800 lg:flex">
           <div className="flex items-center pr-2 lg:space-x-4 lg:pr-8">
             {navLinks.map(({ label, url }, index) => (
               <NavLink
