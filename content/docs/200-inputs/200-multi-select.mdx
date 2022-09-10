@@ -51,19 +51,24 @@ A default option can be set by setting `default` to `true` for any given option.
 ]
 ```
 
-## Return Format
+## Request Format
 
-The array of options are JSON stringified and URI encoded. The values are available via query params.
+The array of options are JSON stringified and URI encoded when injecting into your app's URL template.
+
+**URL Template**
+```bash
+...?myQueryParameter=:multiSelectInputId
+```
 
 **URL**
-```
-?myQueryParameter=%5B%22option-a%22%2C%22option-b%22%5D&myOtherQueryParameter=...
+```bash
+...?myQueryParameter=%5B%22option-a%22%2C%22option-b%22%5D
 ```
 
 Make sure to parse the query parameter in your app code.
 
-**App**
-```TypeScript
+**App Code**
+```ts
 const { myQueryParameter } = getQueryParams();
 
 const multiSelectOptions = JSON.parse(myQueryParameter)
