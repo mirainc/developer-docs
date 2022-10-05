@@ -44,18 +44,18 @@ export const ColorSchemeSwitcher = () => {
 
   return (
     <DropdownMenu.Root onOpenChange={fixScrollPadding}>
-      <DropdownMenu.Trigger className="flex h-8 items-center rounded-md bg-transparent px-3 text-slate-400 hover:bg-gray-50 hover:text-slate-500 dark:text-slate-500 dark:hover:bg-gray-900 dark:hover:text-slate-400">
+      <DropdownMenu.Trigger className="flex h-8 items-center rounded-md bg-transparent px-3 text-slate-400 hover:bg-zinc-50 hover:text-slate-500 dark:text-slate-500 dark:hover:bg-zinc-900 dark:hover:text-slate-400">
         <span className="block w-4">
           <Icon name={colorScheme === 'light' ? 'sun' : 'moon'} />
         </span>
       </DropdownMenu.Trigger>
-      <DropdownMenu.Content className="rounded-md border border-gray-100 bg-gray-50 p-2 dark:border-gray-800 dark:bg-gray-900">
+      <DropdownMenu.Content className="rounded-md border border-zinc-100 bg-zinc-50 p-2 dark:border-zinc-800 dark:bg-zinc-900">
         <DropdownMenu.Item
           onSelect={() => updateColorScheme('light')}
           className={`group flex h-8 cursor-pointer items-center space-x-4 rounded-md px-3 text-sm font-medium leading-none hover:outline-none ${
             preferredColorScheme == 'light'
               ? 'bg-sky-100/50 text-sky-900 dark:bg-sky-500/20 dark:text-sky-100'
-              : 'text-slate-500 hover:bg-gray-50 hover:text-slate-600 dark:text-slate-400 dark:hover:bg-gray-900 dark:hover:text-slate-300'
+              : 'text-slate-500 hover:bg-zinc-50 hover:text-slate-600 dark:text-slate-400 dark:hover:bg-zinc-900 dark:hover:text-slate-300'
           }`}
         >
           <span className="block w-4">
@@ -68,7 +68,7 @@ export const ColorSchemeSwitcher = () => {
           className={`group flex h-8 cursor-pointer items-center space-x-4 rounded-md bg-transparent px-3 text-sm font-medium leading-none hover:outline-none ${
             preferredColorScheme == 'dark'
               ? 'bg-sky-100/50 text-sky-900 dark:bg-sky-500/20 dark:text-sky-100'
-              : 'text-slate-500 hover:bg-gray-50 hover:text-slate-600 dark:text-slate-400 dark:hover:bg-gray-900 dark:hover:text-slate-300'
+              : 'text-slate-500 hover:bg-zinc-50 hover:text-slate-600 dark:text-slate-400 dark:hover:bg-zinc-900 dark:hover:text-slate-300'
           }`}
         >
           <span className="block w-4">
@@ -81,7 +81,7 @@ export const ColorSchemeSwitcher = () => {
           className={`group flex h-8 cursor-pointer items-center space-x-4 rounded-md bg-transparent px-3 text-sm font-medium leading-none hover:outline-none ${
             preferredColorScheme == 'system'
               ? 'bg-sky-100/50 text-sky-900 dark:bg-sky-500/20 dark:text-sky-100'
-              : 'text-slate-500 hover:bg-gray-50 hover:text-slate-600 dark:text-slate-400 dark:hover:bg-gray-900 dark:hover:text-slate-300'
+              : 'text-slate-500 hover:bg-zinc-50 hover:text-slate-600 dark:text-slate-400 dark:hover:bg-zinc-900 dark:hover:text-slate-300'
           }`}
         >
           <span className="block w-4">
