@@ -1,0 +1,61 @@
+---
+title: PAR
+excerpt: How to use PAR POS with the On-Brand Menu API.
+---
+
+Get started using [PAR](https://partech.com/) with the On-Brand Menu API.
+
+## Create a PAR Source
+
+PAR support is currently in private beta, contact [product@support.com](mailto:product@support.com) and we’ll be in touch.
+
+## Categories
+
+PAR categories will be returned as menu groups via the On-Brand Menu API. 
+
+## Items and Modifiers
+
+Modifiers are treated as items in PAR admin portal and will be returned as sub-items from the On-Brand Menu API. Sub-items are items that do not belong to a category but are instead associated with another menu item.
+
+<Callout>The On-Brand Menu API does not support groups of sub-items. PAR "Modifier Groups"attached to an item will be flattened into a single list of sub-items.</Callout>
+
+## Pricing
+Menu items can inherit their price either from the “Item Price” or have an override “Menu Price”, the On-Brand Menu API will return the appropriate pricing based on the menu item’s configuration.
+
+## Calories
+
+PAR does not have a dedicated calorie field, so it leverages the “Description” field to store calorie and other supplemental data about an item such as allergens or gluten-free.  
+
+ie.) 
+
+*Organic Tuscan Flour Crust, Classic Tomato Sauce, Shredded Organic Mozzarella, and 1 Topping of your choice.* 
+
+*Cal 700 - Fat 20g - Carbs 30g - Protein 27g - Fiber 9g*
+
+## Revenue Center
+
+The PAR “Revenue Center” will be set as the item’s `salesCategory` in the On-Brand Menu API.
+
+## Visibility
+
+Only PAR items and modifiers and marked as “Active” will be returned from the On-Brand Menu API.
+
+## Sorting Items and Groups
+
+The sort order of categories returned in the On-Brand Menu API is controlled by the order that they’ve manually been sorted in the PAR admin portal. Items, however, cannot be manually sorted and should be returned in the same order as they appear on the Menu Items page.
+
+## Item Availability
+
+Item availability must be set via the virtual register (Item Availability = "Not Available").
+
+## Publishing Updates
+
+The On-Brand Menu API periodically checks for updates to your PAR restaurant locations. Updates are applied whenever you “Save” and “Publish” changes in the PAR admin portal.. 
+
+The polling frequency is typically 5 mins but depends on whether your account is hosted on a PAR’s single-tenant or multi-tenant server.
+
+## Next Steps
+
+- [Create an On-Brand Menu API key](/docs/on-brand-menu-api/api-keys)
+- [On-Brand Menu API reference](/docs/on-brand-menu-api/reference)
+- [Check out the Whole Foods Menu sample app](/docs/get-started/sample-apps/whole-foods-menu)
