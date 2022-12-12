@@ -30,6 +30,17 @@ import { Label } from '../../components/common/Label';
 import { DocsFooter } from '../../components/docs/DocsFooter';
 import { Callout } from '../../components/common/Callout';
 
+const redirects = [
+  {
+    from: 'get-started/app-lifecycle',
+    to: 'core-concepts/app-lifecycle',
+  },
+  {
+    from: 'get-started/offline-support',
+    to: 'core-concepts/offline-support',
+  },
+];
+
 type Ctx = GetStaticPropsContext<{
   slug?: string[];
 }>;
@@ -38,6 +49,10 @@ export async function getStaticPaths() {
   const paths = allDocs
     .map((d) => d.pathSegments.map((pS: PathSegment) => pS.pathName).join('/'))
     .map(toParams);
+
+  for (const redirect of redirects) {
+    paths.push({ params: { slug: redirect.from.split('/') } });
+  }
 
   return {
     paths,
@@ -53,7 +68,20 @@ export const getStaticProps = async (ctx: Ctx) => {
     (d) =>
       d.pathSegments.map((pS: PathSegment) => pS.pathName).join('/') ===
       pagePath,
-  )!;
+  );
+
+  // If doc is not found, check if pagePath is a redirect.
+  if (!doc) {
+    const redirect = redirects.find((r) => r.from === pagePath);
+    if (redirect) {
+      return {
+        redirect: { destination: `/docs/${redirect.to}`, permanent: true },
+      };
+    } else {
+      throw new Error('Doc not found: ' + pagePath);
+    }
+  }
+
   const tree = buildDocsTree(allDocs);
   const childrenTree = buildDocsTree(
     allDocs,
