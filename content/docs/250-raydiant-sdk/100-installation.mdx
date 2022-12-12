@@ -1,6 +1,32 @@
 ---
 title: Installation
-excerpt: TODO
+excerpt: How to install the Raydiant SDK
 ---
 
-TODO
+To make it easy to add to any app, you can install the Raydiant SDK from [NPM](https://www.npmjs.com/) or include a global script.
+
+## NPM Install
+
+```bash
+npm install @raydiant/sdk
+# or yarn
+yarn install @raydiant/sdk
+```
+
+```js
+import { runtime, devTools } from '@raydiant/sdk';
+```
+
+## Include Global Script
+
+```html
+<script src="https://cdn.raydiant.com/lib/raydiant-sdk@0.3.3.min.js"></script>
+```
+
+```js
+const { runtime, devTools } = window.Raydiant;
+```
+
+## Next Steps
+
+- [Check out the Runtime APIs](/docs/raydiant-sdk/runtime)

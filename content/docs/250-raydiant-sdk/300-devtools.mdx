@@ -1,6 +1,35 @@
 ---
-title: DevTools
-excerpt: TODO
+title: DevTools APIs
+excerpt: Helpful tools for local development.
 ---
 
-TODO
+Use the built-in developer tools to simulate sending and receiving events in local development. 
+
+When you open your app directly in the browser the dev tools are automatically enabled.
+
+## Usage 
+
+```js
+// If installed with NPM:
+import { runtime } from '@raydiant/sdk';
+// Or if installed using the global script:
+const { runtime } = window.Raydiant;
+
+// Check if dev tools are enabled.
+devTools.isEnabled();
+
+// Simulate receiving 'play' from the playlist runtime.
+devTools.play();
+
+// Immediately call play again after complete, simulating a 
+// single presentation in the playlist.
+devTools.play(true);
+
+// Stop looping.
+devTools.disableLoop();
+```
+
+## Next Steps
+
+- [How to install the Raydiant SDK](/docs/raydiant-sdk/installation)
+- [Check out the Runtime APIs](/docs/raydiant-sdk/runtime)
