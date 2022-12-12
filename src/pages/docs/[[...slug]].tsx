@@ -1,6 +1,6 @@
 // Modified from: https://github.com/contentlayerdev/website/blob/main/src/pages/docs/%5B%5B...slug%5D%5D.tsx
 import React from 'react';
-import { GetStaticPropsContext } from 'next';
+import { GetServerSidePropsContext } from 'next';
 import { useRouter } from 'next/router';
 import { useLiveReload, useMDXComponent } from 'next-contentlayer/hooks';
 import { allDocs, Doc } from 'contentlayer/generated';
@@ -15,7 +15,6 @@ import { DocLayout } from '../../components/docs/DocLayout';
 import { Icon } from '../../components/common/Icon';
 import { RaydiantIcon } from '../../components/common/RaydiantIcon';
 import { PathSegment } from '../../../types/PathSegment';
-import { toParams } from '../../utils/next';
 import { PageNavigation } from '../../components/common/PageNavigation';
 import { H2, H3, H4 } from '../../components/common/Heading';
 import { Card } from '../../components/common/Card';
@@ -42,26 +41,11 @@ const redirects = [
   },
 ];
 
-type Ctx = GetStaticPropsContext<{
+type Ctx = GetServerSidePropsContext<{
   slug?: string[];
 }>;
 
-export async function getStaticPaths() {
-  const paths = allDocs
-    .map((d) => d.pathSegments.map((pS: PathSegment) => pS.pathName).join('/'))
-    .map(toParams);
-
-  for (const redirect of redirects) {
-    paths.push({ params: { slug: redirect.from.split('/') } });
-  }
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
-export const getStaticProps = async (ctx: Ctx) => {
+export const getServerSideProps = async (ctx: Ctx) => {
   const { params } = ctx;
   const pagePath = params?.slug?.join('/') ?? '';
 
