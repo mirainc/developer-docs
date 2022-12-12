@@ -1,9 +1,9 @@
 // Modified from: https://github.com/contentlayerdev/website/blob/main/src/pages/docs/%5B%5B...slug%5D%5D.tsx
 import React from 'react';
-import { InferGetStaticPropsType, GetStaticPropsContext } from 'next';
+import { GetStaticPropsContext } from 'next';
 import { useRouter } from 'next/router';
 import { useLiveReload, useMDXComponent } from 'next-contentlayer/hooks';
-import { allDocs } from 'contentlayer/generated';
+import { allDocs, Doc } from 'contentlayer/generated';
 import Zoom from 'react-medium-image-zoom';
 
 import { DocsHeader } from '../../components/docs/DocsHeader';
@@ -29,6 +29,7 @@ import {
 import { Label } from '../../components/common/Label';
 import { DocsFooter } from '../../components/docs/DocsFooter';
 import { Callout } from '../../components/common/Callout';
+import { TreeNode } from 'types/TreeNode';
 
 const redirects = [
   {
@@ -110,7 +111,12 @@ const mdxComponents = {
   Zoom,
 };
 
-const Page = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Page = (props: {
+  doc: Doc;
+  tree: TreeNode[];
+  childrenTree: TreeNode[];
+  breadcrumbs: Array<{ path: string; slug: string; title: string }>;
+}) => {
   const { doc, tree, childrenTree, breadcrumbs } = props;
   const router = useRouter();
   useLiveReload();
