@@ -22,16 +22,27 @@ Technical API reference for the On-Brand Menu API.
 
 ---
 
----
-
 ## `GET /v1/menus/options`
 
 <div className="-mt-4 grid gap-6 md:grid-cols-2">
   <div>
-    Returns a tuple, formatted for use with Remote Options.
+    Returns a tuple of menus, formatted for use with _Remote Options_ for the authenticated API Key.
   </div>
   <div>
     - <ChevronLink url="/docs/on-brand-menu-api/reference/get-menus-options" label="Make a request" />
+  </div>
+</div>
+
+---
+
+## `GET /v1/menus/:menu_id/groups`
+
+<div className="-mt-4 grid gap-6 md:grid-cols-2">
+  <div>
+    Returns a tuple of groups, given a menu ID, formatted for use with _Remote Options_ for the authenticated API Key.
+  </div>
+  <div>
+    - <ChevronLink url="/docs/on-brand-menu-api/reference/get-menu-groups-options" label="Make a request" />
   </div>
 </div>
 
