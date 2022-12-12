@@ -31,14 +31,14 @@ import { Callout } from '../../components/common/Callout';
 import { TreeNode } from 'types/TreeNode';
 
 const redirects = [
-  {
-    from: 'get-started/app-lifecycle',
-    to: 'core-concepts/app-lifecycle',
-  },
-  {
-    from: 'get-started/offline-support',
-    to: 'core-concepts/offline-support',
-  },
+  { from: 'get-started/app-lifecycle', to: 'core-concepts/app-lifecycle' },
+  { from: 'get-started/offline-support', to: 'core-concepts/offline-support' },
+  { from: 'inputs/button-group', to: 'core-concepts/inputs/button-group' },
+  { from: 'inputs/multi-select', to: 'core-concepts/inputs/multi-select' },
+  { from: 'inputs/number', to: 'core-concepts/inputs/number' },
+  { from: 'inputs/select', to: 'core-concepts/inputs/select' },
+  { from: 'inputs/text', to: 'core-concepts/inputs/text' },
+  { from: 'inputs/toggle', to: 'core-concepts/inputs/toggle' },
 ];
 
 type Ctx = GetServerSidePropsContext<{
