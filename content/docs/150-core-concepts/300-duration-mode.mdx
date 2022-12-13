@@ -1,0 +1,41 @@
+---
+title: Duration Mode
+excerpt: TODO
+---
+
+When your app is in a playlist, the amount of time it is visible before moving on to the next presentation in the playlist is called the duration.
+
+Raydiant apps support two different duration modes; _fixed_ and _dynamic_. 
+
+## Fixed Duration
+
+The duration of a _fixed_ duration app can be known upfront. For example, in our [Simple Weather](/docs/get-started/sample-apps/simple-weather) sample app the duration is configurable when creating a presentation. 
+
+Since the runtime is able to determine the duration of the app before loading it—the Simple Weather app's duration mode is _fixed_. 
+
+Fixed duration apps will automatically move on to the next presentation in the playlist after the configured duration.
+
+<Callout>When your app is the only presentation in the playlist, the runtime _will not_ automatically refresh your app. Make sure to periodically update any data your app fetches on load.</Callout>
+
+
+## Dynamic Duration
+
+The duration of a _dynamic_ duration app **cannot** be known upfront. A dynamic duration app might move to next presentation in the playlist when:
+
+- A video has finished playing
+- The live stream or meeting has ended
+- After 10 news articles have been cycled through
+
+Since the runtime is unable to determine the duration of a dynamic duration app, you must use the [Raydiant SDK](/docs/raydiant-sdk) to notify the runtime when your app has completed.
+
+```js
+video.addEventListener('ended', () => {
+  runtime.complete();
+});
+```
+
+
+## Next Steps
+
+- [Check out our Simple Video sample app for an example.](/docs/get-started/sample-apps/simple-video)
+- [Learn how to use the Raydiant SDK's runtime API](/docs/raydiant-sdk/runtime)
