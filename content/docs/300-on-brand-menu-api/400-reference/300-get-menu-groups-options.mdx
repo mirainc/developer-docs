@@ -1,0 +1,40 @@
+---
+title: GET /v1/menus/:menuId/groups/options
+excerpt: Returns a tuple of groups, given a menu ID, formatted for use with _Remote Options_ for the authenticated API Key.
+---
+
+Returns a tuple of groups, given a menu ID, formatted for use with _Remote Options_ for the authenticated API Key.
+
+Full path of the group names are also shown in case of nested groups.
+```
+"label": "Parent Group Name > Child Group Name"
+```
+
+Groups are returned in (ascending) order of full name path.
+
+## Request
+
+Set the `:menuId` value and the `X-API-Key: [API Key]` header.
+
+```bash
+curl --request GET 'https://menu-api.raydiant.com/v1/menus/:menuId/groups/options' \
+     --header 'X-API-Key: [API Key]'
+```
+
+## Response
+
+```json
+[
+  {
+    "label": "Signature Pizzas",
+    "value": "1a7827c3-d4ed-43e8-a030-8b0f2b7fb6bd",
+  }
+]
+```
+
+## Next Steps
+
+- [Read the full On-Brand Menu API reference](/docs/on-brand-menu-api/reference)
+- [Learn how to create an API key and authenticate](/docs/on-brand-menu-api/api-keys)
+- [Learn how to use Remote Options with the Select input](/docs/inputs/select#remote-options)
+- [Learn how to use Remote Options with the Multi-select input](/docs/inputs/multi-select#remote-options)
