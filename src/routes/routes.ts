@@ -19,9 +19,9 @@ export const marketplace = createPath(
 
 export const faq = createPath('/docs/faq', () => `/docs/faq`);
 
-export const simpleWeather = createPath(
-  '/docs/get-started/sample-apps/simple-weather',
-  () => `/docs/get-started/sample-apps/simple-weather`,
+export const weather = createPath(
+  '/docs/get-started/sample-apps/weather',
+  () => `/docs/get-started/sample-apps/weather`,
 );
 
 export const wholeFoodsMenu = createPath(

@@ -23,7 +23,7 @@ const content = {
     {
       title: 'Sample Apps',
       elements: [
-        { label: 'Simple Weather  ', url: routes.simpleWeather() },
+        { label: 'Weather', url: routes.weather() },
         { label: 'Whole Foods Menu', url: routes.wholeFoodsMenu() },
         { label: 'Starbucks Menu', url: routes.starbucksMenu() },
       ],

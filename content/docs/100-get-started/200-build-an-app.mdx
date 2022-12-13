@@ -3,7 +3,7 @@ title: Build an App
 excerpt: A quick tutorial that covers the basics of building your first app.
 ---
 
-This tutorial will walk you through the basics of building a Raydiant app. We’ll use the [Simple Weather](https://simple-weather-raydiant-app.vercel.app/?location=New%20York) app to set up its inputs and preview the app in the Raydiant Dashboard.
+This tutorial will walk you through the basics of building a Raydiant app. We’ll use the [Weather](https://simple-weather-raydiant-app.vercel.app/?location=New%20York) app to set up its inputs and preview the app in the Raydiant Dashboard.
 
 You won’t need to write any code but there are instructions for deploying the weather app at the end of the tutorial if you’d like to use it as a starting point for building your own app.
 
@@ -15,13 +15,13 @@ Once you have an account, sign in to the [Developer Portal](https://developers.r
 
 ## 2. Create the App
 
-From the [Apps](https://developers.raydiant.com/apps) section, we’ll start by creating the Simple Weather app and adding an icon and thumbnail.
+From the [Apps](https://developers.raydiant.com/apps) section, we’ll start by creating the Weather app and adding an icon and thumbnail.
 
 1. Click the “Create app” button <RaydiantIcon name="add" />.
-2. Set the name of the app to “Simple Weather”.
+2. Set the name of the app to “Weather”.
 3. Set the description of the app to “Display local weather from around the world.”
-4. Set the app ID to something unique like `alices-simple-weather`
-5. Upload this <a href="/docs-static/simple-weather-thumbnail.jpg" download>thumbnail</a> and <a href="/docs-static/simple-weather-icon.jpg" download>icon</a> to the “Assets” section.
+4. Set the app ID to something unique like `alices-weather`
+5. Upload this <a href="/docs-static/weather-thumbnail.jpg" download>thumbnail</a> and <a href="/docs-static/weather-icon.jpg" download>icon</a> to the “Assets” section.
 
 ## 3. Add a Location Input
 
@@ -59,11 +59,11 @@ Now that we’ve added the location input let’s add a units input to allow use
 
 ## 5. Save & Preview
 
-Now we’re ready to preview your Simple Weather app in the Raydiant Dashboard.
+Now we’re ready to preview your Weather app in the Raydiant Dashboard.
 
-1. Click “Save” to create your new Simple Weather app.
+1. Click “Save” to create your new Weather app.
 2. Go to your Library in the [Raydiant Dashboard](https://dash.raydiant.com/library).
-3. Click “Simple Weather” app to open the presentation builder.
+3. Click Weather” app to open the presentation builder.
 
 Congrats, you just built a Raydiant app!
 
@@ -73,13 +73,13 @@ You can save new versions of your app in the Developer Portal and any changes wi
 
 ## 6. Deploy Your Own
 
-Deploying your own version of the Simple Weather app is optional but we’ve made it easy for you to use it as a starting point.
+Deploying your own version of the Weather app is optional but we’ve made it easy for you to use it as a starting point.
 
-We’ll show you how to deploy using [Vercel](https://vercel.com) but the [source code](https://github.com/mirainc/simple-weather-app) is available for you to deploy to your preferred host.
+We’ll show you how to deploy using [Vercel](https://vercel.com) but the [source code](https://github.com/mirainc/weather-sample-app) is available for you to deploy to your preferred host.
 
 1. [Sign up for an OpenWeather account](https://home.openweathermap.org/users/sign_up).
 2. Go to OpenWeather’s [API keys section](https://home.openweathermap.org/api_keys) to grab your key.
-3. Click this below “Deploy" button to deploy the Simple Weather app to your own Vercel account.
+3. Click this below “Deploy" button to deploy the Weather app to your own Vercel account.
 
    <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmirainc%2Fsimple-weather-app&env=OPENWEATHERMAP_API_KEY&envDescription=OpenWeather%20API%20key&envLink=https%3A%2F%2Fhome.openweathermap.org%2F&redirect-url=https%3A%2F%2Fdevelopers.raydiant.com%2Fdocs%2Fget-started%2Fbuild-an-app">
      <img src="https://vercel.com/button" alt="Deploy with Vercel" />
