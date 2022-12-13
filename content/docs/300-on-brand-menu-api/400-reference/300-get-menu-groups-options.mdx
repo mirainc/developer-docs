@@ -1,5 +1,5 @@
 ---
-title: GET /v1/menus/:menuId/groups
+title: GET /v1/menus/:menuId/groups/options
 excerpt: Returns a tuple of groups, given a menu ID, formatted for use with _Remote Options_ for the authenticated API Key.
 ---
 
@@ -17,7 +17,7 @@ Groups are returned in (ascending) order of full name path.
 Set the `:menuId` value and the `X-API-Key: [API Key]` header.
 
 ```bash
-curl --request GET 'https://menu-api.raydiant.com/v1/menus/:menuId/groups' \
+curl --request GET 'https://menu-api.raydiant.com/v1/menus/:menuId/groups/options' \
      --header 'X-API-Key: [API Key]'
 ```
 
