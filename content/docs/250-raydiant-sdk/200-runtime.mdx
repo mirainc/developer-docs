@@ -1,14 +1,14 @@
 ---
-title: Runtime APIs
-excerpt: APIs to hook into the app lifecycle
+title: Runtime API
+excerpt: Hook into the app lifecycle.
 ---
 
-The Raydiant SDK's runtime APIs allow you to hook into the [app lifecycle](/docs/core-concepts/app-lifecycle) to:
+The Raydiant SDK's runtime API allow you to hook into the [app lifecycle](/docs/core-concepts/app-lifecycle) to:
 
 - Start animations and videos when your app becomes visible
 - Loop a video if it's the only presentation in a playlist
 - Move to the next presentation in the playlist when an error occurs
-- Add support for [dynamic durations](/docs/core-concepts/duration-type)
+- Add support for [dynamic durations](/docs/core-concepts/duration-mode)
 
 ## Usage
 
@@ -25,15 +25,19 @@ const unsubscribe = runtime.subscribe('play', () => {
   // ...
 });
 
-// Send 'complete' event.
+// Send 'complete' event to move to the next presentation in the
+// playlist. If your app is the only presentation in the playlist, 
+// the 'play' event triggered again.
 runtime.complete();
 
-// Send 'complete' event with error.
+// Send 'complete' event with error. Pass an error to complete when.
+// your app has encountered an error, instructing the runtime to
+// move on to the next presentation in the playlist.
 runtime.complete(new Error());
 ```
 
 ## Next Steps
 
 - [How to install the Raydiant SDK](/docs/raydiant-sdk/installation)
-- [Learn how to add support for dynamic durations](/docs/core-concepts/duration-type)
-- [Check out the DevTools APIs](/docs/raydiant-sdk/devtools)
+- [Learn how to add support for dynamic durations](/docs/core-concepts/duration-mode)
+- [Check out the DevTools API](/docs/raydiant-sdk/devtools)
