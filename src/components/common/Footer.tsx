@@ -14,16 +14,18 @@ const content = {
       title: 'Docs',
       elements: [
         { label: 'Get Started', url: routes.getStarted() },
-        { label: 'Inputs  ', url: routes.inputs() },
-        { label: 'On-Brand Menu API  ', url: routes.onBrandMenuApi() },
-        { label: 'Marketplace  ', url: routes.marketplace() },
-        { label: 'FAQ  ', url: routes.faq() },
+        { label: 'Core Concepts', url: routes.coreConcepts() },
+        { label: 'Raydiant SDK', url: routes.raydiantSdk() },
+        { label: 'On-Brand Menu API', url: routes.onBrandMenuApi() },
+        { label: 'Marketplace', url: routes.marketplace() },
+        { label: 'FAQ', url: routes.faq() },
       ],
     },
     {
       title: 'Sample Apps',
       elements: [
         { label: 'Weather', url: routes.weather() },
+        { label: 'Video', url: routes.video() },
         { label: 'Whole Foods Menu', url: routes.wholeFoodsMenu() },
         { label: 'Starbucks Menu', url: routes.starbucksMenu() },
       ],
