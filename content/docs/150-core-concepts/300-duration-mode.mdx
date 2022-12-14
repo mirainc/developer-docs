@@ -23,7 +23,7 @@ Fixed duration apps will automatically move on to the next presentation in the p
 The duration of a _dynamic_ duration app **cannot** be known upfront. A dynamic duration app might move to next presentation in the playlist when:
 
 - A video has finished playing
-- The live stream or meeting has ended
+- A live stream or meeting has ended
 - After 10 news articles have been cycled through
 
 Since the runtime is unable to determine the duration of a dynamic duration app, you must use the [Raydiant SDK](/docs/raydiant-sdk) to notify the runtime when your app has completed.
@@ -37,5 +37,5 @@ video.addEventListener('ended', () => {
 
 ## Next Steps
 
-- [Check out our Simple Video sample app for an example.](/docs/get-started/sample-apps/simple-video)
+- [Check out our Simple Video sample app for an example](/docs/get-started/sample-apps/video)
 - [Learn how to use the Raydiant SDK's runtime API](/docs/raydiant-sdk/runtime)
