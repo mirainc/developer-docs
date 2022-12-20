@@ -1,9 +1,9 @@
 // Modified from: https://github.com/contentlayerdev/website/blob/main/src/pages/docs/%5B%5B...slug%5D%5D.tsx
 import React from 'react';
-import { InferGetStaticPropsType, GetStaticPropsContext } from 'next';
+import { GetServerSidePropsContext } from 'next';
 import { useRouter } from 'next/router';
 import { useLiveReload, useMDXComponent } from 'next-contentlayer/hooks';
-import { allDocs } from 'contentlayer/generated';
+import { allDocs, Doc } from 'contentlayer/generated';
 import Zoom from 'react-medium-image-zoom';
 
 import { DocsHeader } from '../../components/docs/DocsHeader';
@@ -15,7 +15,6 @@ import { DocLayout } from '../../components/docs/DocLayout';
 import { Icon } from '../../components/common/Icon';
 import { RaydiantIcon } from '../../components/common/RaydiantIcon';
 import { PathSegment } from '../../../types/PathSegment';
-import { toParams } from '../../utils/next';
 import { PageNavigation } from '../../components/common/PageNavigation';
 import { H2, H3, H4 } from '../../components/common/Heading';
 import { Card } from '../../components/common/Card';
@@ -29,23 +28,24 @@ import {
 import { Label } from '../../components/common/Label';
 import { DocsFooter } from '../../components/docs/DocsFooter';
 import { Callout } from '../../components/common/Callout';
+import { TreeNode } from 'types/TreeNode';
 
-type Ctx = GetStaticPropsContext<{
+const redirects = [
+  { from: 'get-started/app-lifecycle', to: 'core-concepts/app-lifecycle' },
+  { from: 'get-started/offline-support', to: 'core-concepts/offline-support' },
+  { from: 'inputs/button-group', to: 'core-concepts/inputs/button-group' },
+  { from: 'inputs/multi-select', to: 'core-concepts/inputs/multi-select' },
+  { from: 'inputs/number', to: 'core-concepts/inputs/number' },
+  { from: 'inputs/select', to: 'core-concepts/inputs/select' },
+  { from: 'inputs/text', to: 'core-concepts/inputs/text' },
+  { from: 'inputs/toggle', to: 'core-concepts/inputs/toggle' },
+];
+
+type Ctx = GetServerSidePropsContext<{
   slug?: string[];
 }>;
 
-export async function getStaticPaths() {
-  const paths = allDocs
-    .map((d) => d.pathSegments.map((pS: PathSegment) => pS.pathName).join('/'))
-    .map(toParams);
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
-export const getStaticProps = async (ctx: Ctx) => {
+export const getServerSideProps = async (ctx: Ctx) => {
   const { params } = ctx;
   const pagePath = params?.slug?.join('/') ?? '';
 
@@ -53,7 +53,20 @@ export const getStaticProps = async (ctx: Ctx) => {
     (d) =>
       d.pathSegments.map((pS: PathSegment) => pS.pathName).join('/') ===
       pagePath,
-  )!;
+  );
+
+  // If doc is not found, check if pagePath is a redirect.
+  if (!doc) {
+    const redirect = redirects.find((r) => r.from === pagePath);
+    if (redirect) {
+      return {
+        redirect: { destination: `/docs/${redirect.to}`, permanent: true },
+      };
+    } else {
+      throw new Error('Doc not found: ' + pagePath);
+    }
+  }
+
   const tree = buildDocsTree(allDocs);
   const childrenTree = buildDocsTree(
     allDocs,
@@ -82,7 +95,12 @@ const mdxComponents = {
   Zoom,
 };
 
-const Page = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Page = (props: {
+  doc: Doc;
+  tree: TreeNode[];
+  childrenTree: TreeNode[];
+  breadcrumbs: Array<{ path: string; slug: string; title: string }>;
+}) => {
   const { doc, tree, childrenTree, breadcrumbs } = props;
   const router = useRouter();
   useLiveReload();

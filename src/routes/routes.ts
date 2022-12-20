@@ -5,7 +5,15 @@ export const getStarted = createPath(
   () => `/docs/get-started`,
 );
 
-export const inputs = createPath('/docs/inputs', () => `/docs/inputs`);
+export const coreConcepts = createPath(
+  '/docs/core-concepts',
+  () => `/docs/core-concepts`,
+);
+
+export const raydiantSdk = createPath(
+  '/docs/raydiant-sdk',
+  () => `/docs/raydiant-sdk`,
+);
 
 export const onBrandMenuApi = createPath(
   '/docs/on-brand-menu-api',
@@ -19,9 +27,14 @@ export const marketplace = createPath(
 
 export const faq = createPath('/docs/faq', () => `/docs/faq`);
 
-export const simpleWeather = createPath(
-  '/docs/get-started/sample-apps/simple-weather',
-  () => `/docs/get-started/sample-apps/simple-weather`,
+export const weather = createPath(
+  '/docs/get-started/sample-apps/weather',
+  () => `/docs/get-started/sample-apps/weather`,
+);
+
+export const video = createPath(
+  '/docs/get-started/sample-apps/video',
+  () => `/docs/get-started/sample-apps/video`,
 );
 
 export const wholeFoodsMenu = createPath(

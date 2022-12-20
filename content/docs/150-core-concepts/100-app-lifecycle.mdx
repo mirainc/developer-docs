@@ -3,7 +3,7 @@ title: App Lifecycle
 excerpt: Learn how Raydiant apps work when running in a playlist.
 ---
 
-When users configure your app via it’s [inputs](/docs/inputs), we call that a _presentation._ Presentations are assigned durations, added to playlists and then published to devices.
+When users configure your app via its [inputs](/docs/core-concepts/inputs), we call that a _presentation._ Presentations are assigned durations, added to playlists and then published to devices.
 
 To avoid showing loading state and [FOUC](https://en.wikipedia.org/wiki/Flash_of_unstyled_content), a Raydiant app will only become visible on screen after its [window’s `onload`](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload) handler is called.
 
@@ -40,10 +40,8 @@ When there are multiple presentations in a playlist, your app will be immediatel
 
 When the _current_ presentation is complete and your app has finished loading it will become visible on the screen.
 
-<Callout>**Upcoming feature:** Hook into the playlist lifecycle to know when your app is running in the background and when it becomes visible.</Callout>
-
 ## Next Steps
 
-- [Build your first Raydiant app](/docs/get-started/build-an-app)
-- [Learn about our on-device cache](/docs/get-started/offline-support)
-- [How to add inputs to your app](/docs/inputs)
+- [Learn about the different duration modes (fixed vs dynamic)](/docs/core-concepts/duration-mode)
+- [How to add inputs to your app](/docs/core-concepts/inputs)
+- [How to hook into the app lifecycle with the Raydiant SDK](/docs/raydiant-sdk)
