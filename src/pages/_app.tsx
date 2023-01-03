@@ -11,8 +11,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <ColorSchemeProvider>
         <Component {...pageProps} />
-        <Analytics />
       </ColorSchemeProvider>
+      <Analytics />
     </>
   );
 }
