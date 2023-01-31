@@ -1,0 +1,51 @@
+---
+title: Olo
+excerpt: How to use Olo POS with the On-Brand Menu API.
+---
+
+Get started using [Olo](https://www.olo.com/) with the On-Brand Menu API.
+
+## Create a Olo Source
+
+Olo support is currently in private beta, contact [product@raydiant.com](mailto:product@raydiant.com) and we’ll be in touch.
+
+## Categories
+
+Olo categories will be returned as menu groups via the On-Brand Menu API. 
+
+## Items and Modifiers
+
+Modifiers are treated as items in Olo admin portal and will be returned as sub-items from the On-Brand Menu API. Sub-items are items that do not belong to a category but are instead associated with another menu item.
+
+<Callout>The On-Brand Menu API does not support groups of sub-items. Olo "Modifier Groups" attached to an item will be flattened into a single list of sub-items.</Callout>
+
+## Pricing
+Menu items can inherit their price either from the “Item Price” or have an override “Menu Price”, the On-Brand Menu API will return the appropriate pricing based on the menu item’s configuration.
+
+## Calories
+
+Olo has two calorie fields, base and max. On-Brand Menu API only uses the base calories field and ignores the max calories field.  
+
+ie.) 
+
+## Sales Category
+
+Olo does not support sales categories.
+
+## Visibility
+
+Only Olo products and modifiers and marked as "Available" will be returned from the On-Brand Menu API.
+
+## Sorting Items and Groups
+
+The sort order of categories returned in the On-Brand Menu API is controlled by the order that is set in the sortorder field in the Olo Portal.
+
+## Publishing Updates
+
+The On-Brand Menu API is notified via webhook about menu and inventory updates, and might take a few minutes to display updates that are applied whenever you “Save” changes in the Olo admin portal. It also periodically checks for updates to your Olo restaurant locations, in case of missed notifications.
+
+## Next Steps
+
+- [Create an On-Brand Menu API key](/docs/on-brand-menu-api/api-keys)
+- [On-Brand Menu API reference](/docs/on-brand-menu-api/reference)
+- [Check out the Whole Foods Menu sample app](/docs/get-started/sample-apps/whole-foods-menu)
