@@ -1,0 +1,131 @@
+---
+title: Resolution Support
+excerpt: App support for different resolution displays.
+---
+
+Apps built for the Raydiant platform can be displayed on different resolution displays.
+This article aims to provide guidance for developers that are navigating the complexities
+of building apps for different resolution displays.
+
+## Terminology
+
+Raydiant uses these resolution names throughout this article:
+
+<SimpleTable
+  headers={['Name', 'Resolution']}
+  rows={[
+    ['720p', '1280x720'],
+    ['1080p', '1920x1080'],
+    ['4K', '3840x2160'],
+    ['8K', '7680x4320'],
+  ]}
+/>
+
+## Resolutions Support
+
+Raydiant devices have limited support for some resolutions:
+
+<SimpleTable
+  headers={['Media Type', '720p', '1080p', '4K', '8K']}
+  rows={[
+    ['Image', 'Supported', 'Supported', 'Supported', 'Planned Support*'],
+    ['Video', 'Supported', 'Supported', 'Partially Supported*', 'Planned Support*'],
+  ]}
+/>
+
+
+\* Trying to use this media most likely will result in a poor user experience.
+
+## Multizone
+
+Multizone is an app that allows combining different apps on one display.
+Below is an image that show Multizone in action:
+
+![Multizone in action](/docs-static/4k-multizone.png)
+
+Different apps are shown on different sections of the display.
+Even if the display is 1080p it doesn’t mean that your app will
+get full 1920x1080 to be displayed on.
+Example where you can see Multizone app that uses two other apps
+in red squares that are given portion of the display:
+
+![Multizone portions of display](/docs-static/4k-multizone-parts.png)
+
+Our recommendations are:
+* Do not assume that 720p is the lowest resolution that your app might be playing on.
+* Do not rely on different resolution breakpoints. Prefer making calculations that are continuous in nature like: "window.clientwidth / 720" which would give you a continuous range of values and would work well for Multizone.
+* Do not assume that 1080p is the highest resolution. Even though it is the only one fully supported resolution, Raydiant is moving forward with higher resolution support.
+
+## Testing
+
+Apps should be tested with:
+* Different resolutions.
+* Different display orientations like: landscape, portrait.
+* Multizone
+
+Different resolutions can be simulated using Chrome developer tools:
+
+1. Open developer tools.
+2. Select "Toggle device toolbar".
+![Toggle device toolbar](/docs-static/4k-toggle-device-toolbar.png)
+3. To add desired resolutions click dimensions dropdown.
+![Click dimensions dropdown](/docs-static/4k-dimensions-dropdown.png)
+4. Click "Edit".
+![Edit](/docs-static/4k-edit.png)
+5. Click "Add custom device...".
+![Add custom device](/docs-static/4k-add-custom-device.png)
+6. Enter device information and click "Add". Device pixel ratio should be set to 1.
+![Enter device information](/docs-static/4k-device-info.png)
+7. Select desired resolution.
+![Select desired resolution](/docs-static/4k-select-desired-resolution.png)
+
+## Styling Recommendations
+
+### CSS Units
+
+Prefer using "vw", "vh", "vmax", "vmin" units.
+Since these units depend on the actual screen.
+
+"em" units are relative to the parent element font size meaning that "2em" would be "32px"
+if the parent element has font size set to "16px".
+Having this in mind, "em" units can be used as long as the parent element has font size
+that is relative to the display resolution.
+
+"rem" units are similar to "em" units but they are relative to the font size of the root element.
+
+Other units are **not recommended** since on different resolutions elements might look different.
+
+### Display Orientation
+
+For better control over element sizes CSS media queries can be used for different display orientations.
+Example:
+
+```css
+@media(orientation: portrait) {
+  html {
+    font-size: 10vh;
+  }
+}
+
+
+@media(orientation: landscape) {
+  html {
+    font-size: 10vw;
+  }
+}
+```
+
+### Font Sizes
+
+Prefer using “vw”, “vh”, “vmax”, “vmin” units for font size.
+
+This is how text looks with different font size unit on the same piece of display:
+
+<SimpleTable
+  headers={['Font Size', '720p', '1080p', '4K', '8K']}
+  rows={[
+    ['2vw', <Image src={'/docs-static/4k-font-size-2vw-720p.png'} alt='2vw 720p' />, <Image src={'/docs-static/4k-font-size-2vw-1080p.png'} alt='2vw 1080p' />, <Image src={'/docs-static/4k-font-size-2vw-4K.png'} alt='2vw 4K' />, <Image src={'/docs-static/4k-font-size-2vw-8K.png'} alt='2vw 8K' />],
+    ['32px', <Image src={'/docs-static/4k-font-size-32px-720p.png'} alt='32px 720p' />, <Image src={'/docs-static/4k-font-size-32px-1080p.png'} alt='32px 1080p' />, <Image src={'/docs-static/4k-font-size-32px-4K.png'} alt='32px 4K' />, <Image src={'/docs-static/4k-font-size-32px-8K.png'} alt='32px 8K' />],
+    ['8mm', <Image src={'/docs-static/4k-font-size-8mm-720p.png'} alt='8mm 720p' />, <Image src={'/docs-static/4k-font-size-8mm-1080p.png'} alt='8mm 1080p' />, <Image src={'/docs-static/4k-font-size-8mm-4K.png'} alt='8mm 4K' />, <Image src={'/docs-static/4k-font-size-8mm-8K.png'} alt='8mm 8K' />],
+  ]}
+/>

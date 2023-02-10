@@ -20,6 +20,8 @@ import { H2, H3, H4 } from '../../components/common/Heading';
 import { Card } from '../../components/common/Card';
 import { Link } from '../../components/common/Link';
 import { ChevronLink } from '../../components/common/ChevronLink';
+import { SimpleTable } from '../../components/common/SimpleTable';
+import { Image } from '../../components/common/Image';
 import {
   OptionsTable,
   OptionTitle,
@@ -90,6 +92,8 @@ const mdxComponents = {
   OptionsTable,
   OptionTitle,
   OptionDescription,
+  SimpleTable,
+  Image,
   Icon,
   RaydiantIcon,
   Zoom,
