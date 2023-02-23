@@ -5,13 +5,50 @@ excerpt: What you need to know before submitting your app.
 
 Before submitting your app for review, make sure your app meets the following criteria:
 
-1. Supports both 1080p and 720p resolutions.
-2. Supports landscape (16:9) and portrait (9:16) screen orientations.
-3. Tested performance on a real device.
-4. Helpful error messaging is provided for invalid input values.
-5. Has a unique icon and thumbnail.
-6. Supports offline (if applicable).
-7. High-resolution videos are scaled down to a max of 1080p (if applicable).
+1. Supports 720p, 1080p and 4K resolutions.
+2. Supports Multizone.
+3. Supports landscape (16:9) and portrait (9:16) screen orientations.
+4. Tested performance on a real device.
+5. Helpful error messaging is provided for invalid input values.
+6. Has a unique icon and thumbnail.
+7. Supports offline (if applicable).
+8. High-resolution videos are scaled down to a max of 1080p (if applicable).
+
+### Supported Resolutions
+
+<SimpleTable
+  headers={['Name', 'Resolution']}
+  rows={[
+    ['720p', '1280x720'],
+    ['1080p', '1920x1080'],
+    ['4K', '3840x2160'],
+  ]}
+/>
+
+#### Supported Multizone resolutions
+
+<SimpleTable
+  headers={['Name', 'Landscape Zone 1', 'Landscape Zone 2', 'Portrait Zone 1', 'Portrait Zone 2']}
+  rows={[
+    ['720p', '897x505', '284x505', '505x898', '505x284'],
+    ['1080p', '1346x757', '426x757', '758x1347', '758x426'],
+    ['4K', '2692x1514', '852x1514', '1516x2694', '1516x852'],
+  ]}
+/>
+
+### Multizone
+
+Multizone is an app that allows combining different apps on one display.
+Different apps are shown on different sections of the display.
+Even if the display is 1080p it doesn’t mean that your app will
+get full 1920x1080 to be displayed on.
+
+Make sure to test your app using Multizone resolutions.
+Resolutions can be changed using Chrome
+[developer tools](https://developer.chrome.com/docs/devtools/open/).
+Devices with different resolutions can be simulated using this
+[guide](https://developer.chrome.com/docs/devtools/device-mode/).
+
 
 ## Next Steps
 
