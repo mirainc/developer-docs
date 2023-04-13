@@ -1,48 +1,48 @@
 ---
-title: NCR
-excerpt: How to use NCR - Aloha POS with the On-Brand Menu API.
+title: NCR Aloha
+excerpt: How to use NCR Aloha POS with the On-Brand Menu API.
 ---
 
-Get started using [NCR - Aloha](https://www.ncr.com/restaurants/aloha-restaurant-pos-system) with the On-Brand Menu API.
+Get started using [NCR Aloha](https://www.ncr.com/restaurants/aloha-restaurant-pos-system) with the On-Brand Menu API.
 
-## Create a NCR - Aloha Source
+## Create a NCR Aloha Source
 
-NCR - Aloha support is currently in private beta, contact [product@raydiant.com](mailto:product@raydiant.com) and we’ll be in touch.
+NCR Aloha support is currently in private beta, contact [product@raydiant.com](mailto:product@raydiant.com) and we’ll be in touch.
 
 ## Sub Menus
 
-NCR - Aloha sub menus will be returned as menu groups via the On-Brand Menu API. 
+NCR Aloha sub menus will be returned as menu groups via the On-Brand Menu API. 
 
 ## Items and Modifiers
 
-Modifiers in the NCR - Aloha admin portal will be returned as sub-items from the On-Brand Menu API. Sub-items are items that do not belong to a category but are instead associated with another menu item.
+Modifiers in NCR Aloha will be returned as sub-items from the On-Brand Menu API. Sub-items are items that do not belong to a category but are instead associated with another menu item.
 
-<Callout>The On-Brand Menu API does not support groups of sub-items. NCR - Aloha "Modifier Groups" attached to an item will be flattened into a single list of sub-items.</Callout>
+<Callout>The On-Brand Menu API does not support groups of sub-items. NCR Aloha "Modifier Groups" attached to an item will be flattened into a single list of sub-items.</Callout>
 
 ## Pricing
 Menu items can inherit their price from a variety of options; however, only one price can be set for an item in a particular setting. The On-Brand Menu API will return the appropriate pricing based on the menu item’s configuration.
 
 ## Calories
 
-Calories are not supported in a specific field by NCR - Aloha.
+NCR Aloha does not have a dedicated calorie field: use the “Description” field to store calorie and other supplemental data about an item such as allergens or gluten-free.
 
 ## Sales Category
 
-NCR - Aloha does not support sales categories.
+NCR Aloha does not support sales categories.
 
 ## Visibility
 
-Only NCR - Aloha products and modifiers and marked as "Available" will be returned from the On-Brand Menu API.
+Only NCR Aloha products and modifiers and marked as "Available" will be returned from the On-Brand Menu API.
 
 ## Sorting Items and Groups
 
-The sort order of categories returned in the On-Brand Menu API is controlled by the order that is set in the NCR - Aloha Portal.
+The sort order of categories returned in the On-Brand Menu API is controlled by the order that is set in the NCR Aloha Portal.
 
 ## Publishing Updates
 
-<Callout>NCR - Aloha does not support push notification for menu updates via webhook or other mechanisms at the moment.</Callout>
+<Callout>NCR Aloha does not support push notification for menu updates via webhook or other mechanisms at the moment.</Callout>
 
-The On-Brand Menu API is periodically updated for NCR - Aloha restaurant locations.
+The On-Brand Menu API is periodically updated for NCR Aloha restaurant locations: at the moment it is updated every hour, on the hour.
 
 ## Next Steps
 
