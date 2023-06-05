@@ -5,12 +5,11 @@ excerpt: Answers to frequently asked questions
 
 ## What screen resolutions should my app support?
 
-Raydiant marketplace apps should support [1080p, 720p, 4K](/docs/marketplace/review-checklist#supported-resolutions) in both portrait and landscape orientations.
-For the best responsive results, consider making your app scale to any 16:9 or 9:16 aspect ratio.
-Viewport CSS units like: "vw", "vh", "vmax", "vmin" are highly encouraged for
-font sizes, margins, paddings.
-Read more on these units [here](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units).
-Layout sizing works best with CSS viewport or percentage units.
+Raydiant marketplace apps should support [1080p, 720p and 4K](/docs/marketplace/review-checklist#supported-resolutions) in both portrait and landscape orientations. 
+
+We recommend using [orientation CSS media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/orientation) to ensure your app is responsive to either orientation.
+
+For the best responsive results, consider making your app scale to any 16:9 or 9:16 aspect ratio. Viewport CSS units like `vw`, `vh`, `vmax`, `vmin` are highly encouraged for font sizes, margins, paddings. Read more on these units [here](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units). 
 
 ## How do I track my app’s users?
 
