@@ -1,0 +1,64 @@
+---
+title: Square
+excerpt: How to use Square POS with the On-Brand Menu API.
+---
+
+Get started using [Square](https://www.squareup.com/) with the On-Brand Menu API.
+
+## Create a Square Source
+
+Square support is currently in private beta, contact [product@raydiant.com](mailto:product@raydiant.com) and we’ll be in touch.
+
+## Locations
+
+A default menu will be created for each Square location.
+
+## Categories
+
+Square categories will be returned as menu groups via the On-Brand Menu API.
+
+## Items and Modifiers
+
+Square items will be returned as menu items via the On-Brand Menu API. Square item variations will be returned as sub-items.
+
+<Callout>Square modifiers are not supported at the moment.</Callout>
+
+## Pricing
+Menu items won't display any price since they represent Square items, which do not have price.
+Menu sub-items will display the price present on item variations.
+
+## Calories
+
+Square does not natively support calories on items but you can use custom attributes to set calorie data.
+
+The On-Brand Menu API looks for a custom attribute named `calories` and typed as number.
+
+## Tags
+
+Square does not natively support tags on items but you can use custom attributes to set tag data.
+
+The On-Brand Menu API looks for a custom attribute named `tags` and typed as selection.
+
+## Sales Category
+
+Square does not support sales categories.
+
+## Visibility
+
+Square items/item variations can be hidden from a specific location by unchecking that location on item details page in Square.
+
+## Sorting Items and Groups
+
+Square does not natively support sorting items and groups but you can use custom attributes.
+
+The On-Brand Menu API looks for a custom attribute named `position` and typed as number.
+
+## Publishing Updates
+
+The On-Brand Menu API is notified via webhook about catalog and inventory updates, and might take a few minutes to display updates that are applied whenever you “Save” changes in the Square dashboard. It also periodically checks for updates to your Square catalog, in case of missed notifications.
+
+## Next Steps
+
+- [Create an On-Brand Menu API key](/docs/on-brand-menu-api/api-keys)
+- [On-Brand Menu API reference](/docs/on-brand-menu-api/reference)
+- [Check out the Whole Foods Menu sample app](/docs/get-started/sample-apps/whole-foods-menu)
