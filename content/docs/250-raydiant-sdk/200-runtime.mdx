@@ -30,7 +30,7 @@ const unsubscribe = runtime.subscribe('play', () => {
 runtime.complete();
 
 // Send the 'complete' event with an error. Pass an error to
-// complete when. your app has encountered an error, instructing
+// complete when your app has encountered an error, instructing
 // the runtime to move on to the next presentation in the playlist.
 runtime.complete(new Error());
 ```
