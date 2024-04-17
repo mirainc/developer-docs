@@ -35,6 +35,51 @@ runtime.complete();
 runtime.complete(new Error());
 ```
 
+## Interrupt Locks <BetaLabel className="relative top-[-2px] ml-1" />
+
+The runtime API provides a way to lock the app from being interrupted by a publish or a scheduled event. 
+
+Using interrupt locks is useful when building an interactive kiosk app where you want to avoid interruptions while a user is interacting with it. 
+
+### Automatic Locking
+
+Use the `addIdleListener` method to automatically lock the app when a user interacts with your app.
+
+```js
+import { runtime } from '@raydiant/sdk';
+// Or if installed using the global script:
+const { runtime } = window.Raydiant;
+
+// Defaults (add listener to document with 30s idle time).
+runtime.addIdleListener();
+
+// With custom idle timeout (in seconds)
+runtime.addIdleListener(5);
+
+// With callback (receives idle=true when inactive and idle=false when active).
+runtime.addIdleListener(5, (idle) => { ... });
+
+// With custom container
+runtime.addIdleListener(containerEl, 5, (idle) => { ... });
+```
+
+### Manual Locking
+
+For more control you can manually request a lock with the `acquireInterruptLock` method. The lock will automatically release after 1 minute unless renewed.
+
+```js
+import { runtime } from '@raydiant/sdk';
+
+// Request a lock. The lock will release after 1 minute unless renewed.
+const lock = await runtime.acquireInterruptLock();
+
+// Renew lock. Increase the expiry time to another minute.
+await lock.renew();
+
+// Release the lock. Allow content to interrupt again.
+await lock.release();
+```
+
 ## Next Steps
 
 - [How to install the Raydiant SDK](/docs/raydiant-sdk/installation)
