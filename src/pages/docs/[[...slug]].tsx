@@ -30,6 +30,7 @@ import {
 import { Label } from '../../components/common/Label';
 import { DocsFooter } from '../../components/docs/DocsFooter';
 import { Callout } from '../../components/common/Callout';
+import { BetaLabel } from '../../components/docs/BetaLabel';
 import { TreeNode } from 'types/TreeNode';
 
 const redirects = [
@@ -97,6 +98,7 @@ const mdxComponents = {
   Icon,
   RaydiantIcon,
   Zoom,
+  BetaLabel,
 };
 
 const Page = (props: {
