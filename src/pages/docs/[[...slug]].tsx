@@ -122,7 +122,7 @@ const Page = (props: {
           style={{ height: 'calc(100vh - 64px)' }}
           className="sticky top-16 hidden shrink-0 border-r border-zinc-200 dark:border-zinc-800 lg:block"
         >
-          <div className="-ml-3 h-full overflow-y-scroll p-8 pl-16">
+          <div className="-ml-3 h-full overflow-y-scroll p-6 pl-12">
             <DocsNavigation tree={tree} />
           </div>
           <div className="absolute inset-x-0 top-0 h-8 bg-gradient-to-t from-white/0 to-white/100 dark:from-zinc-950/0 dark:to-zinc-950/100" />

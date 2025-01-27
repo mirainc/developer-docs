@@ -133,7 +133,7 @@ export const DocsNavigation: FC<{ tree: TreeNode[] }> = ({ tree }) => {
   const router = useRouter();
 
   return (
-    <aside className="-ml-6 w-80">
+    <aside className="-ml-6 w-72">
       <div>
         <Tree tree={tree} level={0} activePath={router.asPath} />
       </div>
