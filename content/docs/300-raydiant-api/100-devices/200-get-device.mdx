@@ -1,0 +1,134 @@
+---
+title: Get Device
+excerpt: Retrieve info about a specific device.
+---
+
+## `GET /devices/{id}`
+
+Retrieve info about a specific device such as online status, orientation and resolution and playlist.
+## Authentication
+
+Set the `Authorization` header to `Bearer {API Key}`.
+
+**Scopes**: `device:read`
+
+## Path Parameters
+
+<SimpleTable
+  headers={['Parameter', 'Description']}
+  rows={[
+    [<code>id</code>, <span>The device ID. In most cases this will be the mac address of the device (ie. <code>c4:23:60:91:c0:6c</code>).</span>],
+  ]}
+/>
+
+## Responses
+
+### `200 (OK)`
+
+The device was successfully retrieved. 
+
+<SimpleTable
+  headers={['Field', 'Description']}
+  rows={[
+    [
+      <><code>id</code>&nbsp;&nbsp;<em>string</em></>, 
+      <span>The device ID to retrieve. In most cases this will be the mac address of the device (ie. <code>c4:23:60:91:c0:6c</code>).</span>
+    ],
+    [
+      <><code>name</code>&nbsp;&nbsp;<em>string</em></>, 
+      'The name of the device.',
+    ],
+    [
+      <><code>timezone</code>&nbsp;&nbsp;<em>string</em></>, 
+      'The timezone of the device.',
+    ],
+    [
+      <><code>screen_resolution</code>&nbsp;&nbsp;<em>string</em></>, 
+      'The screen resolution of the device.',
+    ],
+    [
+      <><code>screen_orientation</code>&nbsp;&nbsp;<em>string</em></>, 
+      'The screen orientation of the device.',
+    ],
+    [
+      <><code>registered_at</code>&nbsp;&nbsp;<em>string</em></>, 
+      'When the device was registered using it’s activation code.',
+    ],
+    [
+      <><code>published_at</code>&nbsp;&nbsp;<em>string</em></>, 
+      'When the device was last published to.',
+    ],
+    [
+      <><code>last_heartbeat_at</code>&nbsp;&nbsp;<em>string</em></>, 
+      'When the device last sent a heartbeat. If the device is online, a heartbeat will be sent every few minutes.',
+    ],
+    [
+      <><code>is_online</code>&nbsp;&nbsp;<em>boolean</em></>, 
+      <span>Whether or not the device is online. Return <code>false</code> if the <code>last_heartbeat_at</code> value is older than 5 minutes ago.</span>,
+    ],
+    [
+      <><code>offline_startup</code>&nbsp;&nbsp;<em>boolean</em></>, 
+      'Whether or not the device will start playing from cache after start up.',
+    ],
+    [
+      <><code>offline_startup_delay_minutes</code><br /><em>integer</em></>, 
+      <span>How long the device will wait on the WiFi setup screen when <code>offline_startup</code> is enabled.</span>,
+    ],
+    [
+      <><code>open_dev_tools</code>&nbsp;&nbsp;<em>integer</em></>, 
+      'Whether or not the developer tools will be opened on start up.',
+    ],
+    [
+      <><code>updated_at</code>&nbsp;&nbsp;<em>string</em></>, 
+      'When the device was last updated.',
+    ],
+    [
+      <><code>created_at</code>&nbsp;&nbsp;<em>integer</em></>, 
+      'When the device was created. This is typically the date when the device was imaged, before registration.',
+    ],
+  ]}
+/>
+
+```json
+{
+  "id": "c4:23:60:91:c0:6c",
+  "name": "Front Lobby",
+  "timezone": "America/Los_Angeles",
+  "screen_resolution": "1920x1080",
+  "screen_orientation": "normal",
+  "registered_at": "2024-03-21T17:51:45.732391Z",
+  "published_at": "2025-01-15T08:21:49.219648Z",
+  "last_heartbeat_at": "2024-01-15T17:08:27.219444Z",
+  "is_online": true,
+  "offline_startup": true,
+  "offline_startup_delay_minutes": 1,
+  "open_dev_tools": false,
+  "updated_at": "2025-01-15T15:20:15.955849Z",
+  "created_at": "2024-03-21T17:51:45.70569Z",
+}
+```
+
+### `404 (Not Found)`
+
+The device does not exist or the provided API key does not have access to this device. The user that the API key is associated with must have update or read access to the device.
+
+```json
+{
+  "message": "Device not found"
+}
+```
+
+### `403 (Forbidden)`
+
+The API key does not have the `device:read` scope.
+
+```json
+{
+  "message": "Invalid scopes"
+}
+```
+
+## Next Steps
+
+- [Publish Device](/docs/raydiant-api/devices/publish-device)
+- [Update Device](/docs/raydiant-api/devices/update-device)

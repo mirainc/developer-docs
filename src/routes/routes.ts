@@ -16,8 +16,8 @@ export const raydiantSdk = createPath(
 );
 
 export const onBrandMenuApi = createPath(
-  '/docs/on-brand-menu-api',
-  () => `/docs/on-brand-menu-api`,
+  '/docs/on-brand-menus',
+  () => `/docs/on-brand-menus`,
 );
 
 export const marketplace = createPath(

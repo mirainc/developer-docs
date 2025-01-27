@@ -1,0 +1,58 @@
+---
+title: Metadata
+excerpt: Receive metadata about the app's environment.
+---
+
+Metadata allows you to receive information about the environment your app is running in with it’s URL template. 
+
+Similar to [Inputs](/docs/core-concepts/inputs), you can receive metadata through the URL template using the special `:$<metadata>` placeholder.
+
+## `:$deviceId`
+
+When your application is running on a ScreenRay device you can receive the device ID via your app’s URL with the `:$deviceId` metadata parameter.
+
+```
+https://my-app.com/:$deviceId/content
+https://my-app.com?device=:$deviceId
+```
+
+The `:$deviceId` parameter can be part of the URL path or the query string and when your app is running on a ScreenRay device, it will be replaced with the actual device ID (in most cases this will be the mac address).
+
+### Dashboard Previews
+
+When previewing your app in the Raydiant Dashboard we do not have a device context. Therefore a device ID will not be provided. 
+
+If the `:$deviceId` is part of the query string then it will be replaced with empty string when displayed in the preview.
+
+```
+https://my-app.com?device=
+```
+
+If the `:$deviceId` is used in the URL path then it will not be replaced with an empty string to avoid creating an invalid URL. Instead you will receive the URL-encoded value of :$deviceId.
+
+```
+https://my-app.com/:$deviceId/content
+```
+
+You can use the existence of `:$deviceId` in the URL to serve default content when previewing your app in the Raydiant Dashboard.
+
+## `:$renderMode`
+
+You can use the `:$renderMode` metadata to know if you’re app is being rendered in the Dashboard preview or on a ScreenRay device. 
+
+```
+https://my-app.com?renderMode=:$renderMode
+```
+
+This can be used to provide helpful messaging to the user when configuring the app in the Raydiant Dashboard, or for disabling certain features of your app when it is not running on an actual device.
+
+When your app is loaded on a ScreenRay device `:$renderMode` will be replaced with `live` and when loaded in the Dashboard `preview` it will be replaced with preview.
+
+```
+https://my-app.com?renderMode=live # when loaded on a device
+https://my-app.com?renderMode=preview # when loaded in the Dashboard preview
+```
+
+## Next Steps
+
+- [How to add inputs to your app](/docs/core-concepts/inputs)

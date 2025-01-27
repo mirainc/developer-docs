@@ -1,0 +1,84 @@
+---
+title: Publish Device
+excerpt: Trigger a soft-reload of the running playlist.
+---
+
+## `POST /devices/{id}/publish`
+
+Publishes to a single device. Triggers a soft-reload of the running playlist.
+
+## Authentication
+
+Set the `Authorization` header to `Bearer {API Key}`.
+
+**Scopes**: `device:publish`
+
+## Path Parameters
+
+<SimpleTable
+  headers={['Parameter', 'Description']}
+  rows={[
+    [<code>id</code>, <span>The device ID to publish to. In most cases this will be the mac address of the device (ie. <code>c4:23:60:91:c0:6c</code>).</span>],
+  ]}
+/>
+
+## Responses
+
+### `200 (OK)`
+
+The device was successfully published. 
+
+<SimpleTable
+  headers={['Field', 'Description']}
+  rows={[
+    [<><code>published_at</code>&nbsp;&nbsp;<em>string</em></>, 'The updated timestamp of the new publish to the device.'],
+  ]}
+/>
+
+```json
+{
+  "published_at": "2024-12-04T21:02:08.199753Z"
+}
+```
+
+### `204 (No Content)`
+
+The device does not have a playlist assigned and the publish was ignored.
+
+<SimpleTable
+  headers={['Field', 'Description']}
+  rows={[
+    [<><code>published_at</code>&nbsp;&nbsp;<em>string</em></>, 'The timestamp of the most recent publish to the device. If the device has never been published to then null will be returned. .'],
+  ]}
+/>
+
+```json
+{
+  "published_at": null
+}
+```
+
+### `404 (Not Found)`
+
+The device does not exist or the provided API key does not have access to this device. The user that the API key is associated with must have update or publish access to the device.
+
+```json
+{
+  "message": "Device not found"
+}
+```
+
+### `403 (Forbidden)`
+
+The API key does not have the `device:publish` scope.
+
+```json
+{
+  "message": "Invalid scopes"
+}
+```
+
+## Next Steps
+
+- [Get Device](/docs/raydiant-api/devices/get-device)
+- [Update Device](/docs/raydiant-api/devices/update-device)
