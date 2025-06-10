@@ -20,7 +20,7 @@ The `:$deviceId` parameter can be part of the URL path or the query string and w
 
 ### Dashboard Previews
 
-When previewing your app in the Raydiant Dashboard we do not have a device context. Therefore a device ID will not be provided. 
+When previewing your app in the Displai Dashboard we do not have a device context. Therefore a device ID will not be provided. 
 
 If the `:$deviceId` is part of the query string then it will be replaced with empty string when displayed in the preview.
 
@@ -34,7 +34,7 @@ If the `:$deviceId` is used in the URL path then it will not be replaced with an
 https://my-app.com/:$deviceId/content
 ```
 
-You can use the existence of `:$deviceId` in the URL to serve default content when previewing your app in the Raydiant Dashboard.
+You can use the existence of `:$deviceId` in the URL to serve default content when previewing your app in the Displai Dashboard.
 
 ## `:$renderMode`
 
@@ -44,7 +44,7 @@ You can use the `:$renderMode` metadata to know if you’re app is being rendere
 https://my-app.com?renderMode=:$renderMode
 ```
 
-This can be used to provide helpful messaging to the user when configuring the app in the Raydiant Dashboard, or for disabling certain features of your app when it is not running on an actual device.
+This can be used to provide helpful messaging to the user when configuring the app in the Displai Dashboard, or for disabling certain features of your app when it is not running on an actual device.
 
 When your app is loaded on a ScreenRay device `:$renderMode` will be replaced with `live` and when loaded in the Dashboard preview it will be replaced with `preview`.
 

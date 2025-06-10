@@ -22,7 +22,7 @@ const iconMap = {
   'toast-settings': ToastSettingsIcon,
 };
 
-export const RaydiantIcon: FC<{ name: IconName }> = ({ name }) => {
+export const DisplaiIcon: FC<{ name: IconName }> = ({ name }) => {
   const IconComponent = iconMap[name];
   return (
     // Negative margin ensures icon is vertically centered with text

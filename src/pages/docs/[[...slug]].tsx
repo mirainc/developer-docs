@@ -13,7 +13,7 @@ import { buildBreadcrumbs } from '../../utils/buildBreadcrumbs';
 import { DocsNavigation } from '../../components/docs/DocsNavigation';
 import { DocLayout } from '../../components/docs/DocLayout';
 import { Icon } from '../../components/common/Icon';
-import { RaydiantIcon } from '../../components/common/RaydiantIcon';
+import { DisplaiIcon } from '../../components/common/DisplaiIcon';
 import { PathSegment } from '../../../types/PathSegment';
 import { PageNavigation } from '../../components/common/PageNavigation';
 import { H2, H3, H4 } from '../../components/common/Heading';
@@ -96,7 +96,7 @@ const mdxComponents = {
   SimpleTable,
   Image,
   Icon,
-  RaydiantIcon,
+  DisplaiIcon,
   Zoom,
   BetaLabel,
 };
@@ -114,7 +114,7 @@ const Page = (props: {
 
   return (
     <DocLayout
-      title={doc.title + ' – Raydiant Developer Docs'}
+      title={doc.title + ' – Displai Developer Docs'}
       description={doc.excerpt}
     >
       <div className="relative mx-auto w-full max-w-screen-2xl lg:flex lg:items-start">

@@ -3,21 +3,21 @@ title: Development
 excerpt: How to develop locally and test your app.
 ---
 
-Developing a Raydiant app should feel familiar to developing a typical website.
+Developing a Displai app should feel familiar to developing a typical website.
 
 You can use your preferred web frameworks to build an app from scratch or even use an existing website.
 
-Here we’ll review the recommended development flow for building a Raydiant app but first you’ll need to make sure you [create a developer account](/docs/get-started/create-an-account).
+Here we’ll review the recommended development flow for building a Displai app but first you’ll need to make sure you [create a developer account](/docs/get-started/create-an-account).
 
 ## 1. Develop Locally
 
-Raydiant does not have an opinion on how you build your app so you can use your favourite web frameworks for local development.
+Displai does not have an opinion on how you build your app so you can use your favourite web frameworks for local development.
 
 Our devices run a version of Chromium so for the best experience we recommend developing your app in the [Google Chrome](https://www.google.com/intl/en_ca/chrome/) browser.
 
 <Callout>[Check out the FAQ](/docs/faq) if you’d like to know which version of Chromium our devices use.</Callout>
 
-Since Raydiant apps are just URLs, you can get pretty far in the development process without actually touching the Raydiant platform. To test any [inputs](/docs/core-concepts/inputs) your app requires, update the URL of the browser.
+Since Displai apps are just URLs, you can get pretty far in the development process without actually touching the Displai platform. To test any [inputs](/docs/core-concepts/inputs) your app requires, update the URL of the browser.
 
 ```bash
 http://127.0.0.1:4000?headingText=My First App!
@@ -25,13 +25,13 @@ http://127.0.0.1:4000?headingText=My First App!
 
 ## 2. Deploy your App
 
-You can also use your favorite web host to deploy your app. We prefer hosts that support deploy previews like [Vercel](https://vercel.com/features/previews) and [Netlify](https://www.netlify.com/products/deploy-previews/) but you are welcome to host your Raydiant app however you’d like.
+You can also use your favorite web host to deploy your app. We prefer hosts that support deploy previews like [Vercel](https://vercel.com/features/previews) and [Netlify](https://www.netlify.com/products/deploy-previews/) but you are welcome to host your Displai app however you’d like.
 
-Once you’ve deployed you can create your Raydiant app from the [Developer Portal](https://developers.raydiant.com/apps) to add inputs and [marketplace](/docs/marketplace) assets.
+Once you’ve deployed you can create your Displai app from the [Developer Portal](https://developers.displai.ai/apps) to add inputs and [marketplace](/docs/marketplace) assets.
 
-After you create your app in the Developer Portal you will be able to test any inputs you’ve added in the [Raydiant Dashboard](https://dash.raydiant.com/library). You will find your app in the Library when you click the “Create” button.
+After you create your app in the Developer Portal you will be able to test any inputs you’ve added in the [Displai Dashboard](https://dash.displai.ai/library). You will find your app in the Library when you click the “Create” button.
 
-<Callout>Check out the [Build an App](/docs/get-started/build-an-app) tutorial for an in-depth walkthrough on creating and testing a Raydiant app.</Callout>
+<Callout>Check out the [Build an App](/docs/get-started/build-an-app) tutorial for an in-depth walkthrough on creating and testing a Displai app.</Callout>
 
 ## 3. Run a Playlist
 
@@ -48,30 +48,30 @@ We’ll explain how to create and publish a test playlist below but here’s the
 
 If you already have access to a device you can skip to the “Create a Playlist” step below.
 
-As a developer, you can use Raydiant’s [web player](https://secondscreen.raydiant.com) to register a “virtual” device you can use for testing your app:
+As a developer, you can use Displai’s [web player](https://secondscreen.displai.ai) to register a “virtual” device you can use for testing your app:
 
-1. Open the [web player](https://secondscreen.raydiant.com) in a browser (Chrome is preferred).
+1. Open the [web player](https://secondscreen.displai.ai) in a browser (Chrome is preferred).
 2. Copy the association code displayed on the screen.
-3. Go to the [Screens](https://dash.raydiant.com/screens) section in the Raydiant Dashboard.
-4. Paste the association code from step 2, or click “Add Screen” <RaydiantIcon name="add" /> to register a new device.
+3. Go to the [Screens](https://dash.displai.ai/screens) section in the Displai Dashboard.
+4. Paste the association code from step 2, or click “Add Screen” <DisplaiIcon name="add" /> to register a new device.
 5. Name the device and click “Activate”.
 
 ### Create a Playlist
 
 Once you’ve registered a device, you can build your first playlist.
 
-1. Go to the [Screens](https://dash.raydiant.com/screens) section in the Raydiant Dashboard.
-2. Click the “playlists” <RaydiantIcon name="playlists" /> button on your device.
-3. Click the add new playlist button <RaydiantIcon name="playlist-add" />.
+1. Go to the [Screens](https://dash.displai.ai/screens) section in the Displai Dashboard.
+2. Click the “playlists” <DisplaiIcon name="playlists" /> button on your device.
+3. Click the add new playlist button <DisplaiIcon name="playlist-add" />.
 4. Name the playlist and click “Save”.
 
 ### Add Content
 
 Now let’s add some presentations to the playlist to test how your app behaves.
 
-1. Click the “Add” button <RaydiantIcon name="add" /> to add presentations to the playlist.
-2. Click the “Create” button <RaydiantIcon name="add" /> to create a new presentation.
-3. Select your app from the list of Raydiant apps
+1. Click the “Add” button <DisplaiIcon name="add" /> to add presentations to the playlist.
+2. Click the “Create” button <DisplaiIcon name="add" /> to create a new presentation.
+3. Select your app from the list of Displai apps
 4. Configure your apps’ inputs
 5. Click “Save” and then “Done” to go back to the presentation selector.
 6. To test multiple presentations in a playlist, repeat steps 2-5.
@@ -81,8 +81,8 @@ Now let’s add some presentations to the playlist to test how your app behaves.
 
 After creating a playlist for your app you can publish it to either a virtual device (using our web player) or an actual device.
 
-1. Go to the [Screens](https://dash.raydiant.com/screens) section in the Raydiant Dashboard.
-2. Click the “playlists” button <RaydiantIcon name="playlists" /> on your device.
+1. Go to the [Screens](https://dash.displai.ai/screens) section in the Displai Dashboard.
+2. Click the “playlists” button <DisplaiIcon name="playlists" /> on your device.
 3. Click your playlist from the playlist selector.
 4. Click “Assign” to assign it to the selected device.
 5. Click the “Publish” button for the device.
@@ -90,11 +90,11 @@ After creating a playlist for your app you can publish it to either a virtual de
 
 ## 4. Test Offline
 
-To test how your app works with the on-device cache you will need an actual device. If you do not have one, please reach out to product@raydiant.com.
+To test how your app works with the on-device cache you will need an actual device. If you do not have one, please reach out to product@displai.ai.
 
 We recommend connecting your device via ethernet instead of WiFi so you can easily disconnect and reconnect the device.
 
-<Callout>It is not yet possible to reset the WiFi credentials. If you need help connecting to another WiFi network contact [support@raydiant.com](mailto:support@raydiant.com).</Callout>
+<Callout>It is not yet possible to reset the WiFi credentials. If you need help connecting to another WiFi network contact [support@displai.ai](mailto:support@displai.ai).</Callout>
 
 Once you have a device connected to ethernet you can test how your app behaves during a temporary outage.
 

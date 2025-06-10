@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.raydiant.com/
+Host: https://www.displai.ai/
 
 # Sitemaps
-Sitemap: https://www.raydiant.com/sitemap.xml
+Sitemap: https://www.displai.ai/sitemap.xml
