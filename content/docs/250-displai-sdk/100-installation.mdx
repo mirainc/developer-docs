@@ -1,0 +1,33 @@
+---
+title: Installation
+excerpt: How to install the Displai SDK.
+---
+
+To make it easy to add to any app, you can install the Displai SDK from [NPM](https://www.npmjs.com/) or include a global script.
+
+## NPM Install
+
+```bash
+npm install @displai/sdk
+# or yarn
+yarn add @displai/sdk
+```
+
+```js
+import { runtime, devTools } from '@displai/sdk';
+```
+
+## Include Global Script
+
+```html
+<script src="https://cdn.displai.ai/lib/displai-sdk@0.9.1.min.js"></script>
+```
+
+```js
+const { runtime, devTools } = window.Displai;
+```
+
+## Next Steps
+
+- [Check out the Runtime API](/docs/displai-sdk/runtime)
+- [Check out the DevTools API](/docs/displai-sdk/devtools)

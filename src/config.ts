@@ -1,9 +1,8 @@
 const config = {
-  raydiantDashUrl: 'https://dash.raydiant.com',
+  dashUrl: 'https://dash.displai.ai',
   developerPortalUrl: '/',
-  raydiantUrl: 'https://www.raydiant.com',
-  raydiantDevelopersUrl: 'https://developers.raydiant.com',
-  twitterUrl: 'https://twitter.com/tryraydiant',
+  marketingUrl: 'https://www.displai.ai',
+  developersUrl: 'https://developers.displai.ai',
   gitHubUrl: 'https://github.com/mirainc/docs-site',
 };
 

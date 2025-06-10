@@ -7,7 +7,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const fields = allDocs.map((d) => {
     const path = d.pathSegments.map((pS: PathSegment) => pS.pathName).join('/');
     return {
-      loc: `https://developers.raydiant.com/docs/${path}`,
+      loc: `https://developers.displai.ai/docs/${path}`,
       lastmod: d.last_edited,
     };
   });

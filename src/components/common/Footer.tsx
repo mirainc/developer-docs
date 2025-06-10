@@ -15,7 +15,7 @@ const content = {
       elements: [
         { label: 'Get Started', url: routes.getStarted() },
         { label: 'Core Concepts', url: routes.coreConcepts() },
-        { label: 'Raydiant SDK', url: routes.raydiantSdk() },
+        { label: 'Displai SDK', url: routes.displaiSdk() },
         { label: 'On-Brand Menu API', url: routes.onBrandMenuApi() },
         { label: 'Marketplace', url: routes.marketplace() },
         { label: 'FAQ', url: routes.faq() },
@@ -33,9 +33,9 @@ const content = {
     {
       title: 'Products',
       elements: [
-        { label: 'Raydiant Dashboard', url: config.raydiantDashUrl },
+        { label: 'Displai Dashboard', url: config.dashUrl },
         { label: 'Developer Portal', url: config.developerPortalUrl },
-        { label: 'Website', url: config.raydiantUrl },
+        { label: 'Website', url: config.marketingUrl },
       ],
     },
   ],

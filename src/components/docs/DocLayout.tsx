@@ -18,14 +18,14 @@ interface DocLayoutProps {
 export const DocLayout: FC<DocLayoutProps> = ({ children, ...customMeta }) => {
   const router = useRouter();
 
-  const baseUrl = config.raydiantDevelopersUrl;
+  const baseUrl = config.developersUrl;
 
   const meta = {
-    title: 'Raydiant Developer Docs',
+    title: 'Displai Developer Docs',
     description:
-      "Raydiant's application development environment is built for web developers. No proprietary markup languages or programming environments to learn.",
+      "Displai's application development environment is built for web developers. No proprietary markup languages or programming environments to learn.",
     url: customMeta.urlPath ? `${baseUrl}${customMeta.urlPath}` : baseUrl,
-    name: 'Raydiant Developer Docs',
+    name: 'Displai Developer Docs',
     image: customMeta.imagePath
       ? `${baseUrl}/docs/${customMeta.imagePath}`
       : `${baseUrl}/docs/meta.jpg`,

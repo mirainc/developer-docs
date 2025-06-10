@@ -3,7 +3,7 @@ title: Runtime API
 excerpt: Hook into the app lifecycle.
 ---
 
-The Raydiant SDK's runtime API allows you to hook into the [app lifecycle](/docs/core-concepts/app-lifecycle) to:
+The Displai SDK's runtime API allows you to hook into the [app lifecycle](/docs/core-concepts/app-lifecycle) to:
 
 - Start animations and videos when your app becomes visible
 - Loop a video if it's the only presentation in the playlist
@@ -14,9 +14,9 @@ The Raydiant SDK's runtime API allows you to hook into the [app lifecycle](/docs
 
 ```js
 // If installed with NPM:
-import { runtime } from '@raydiant/sdk';
+import { runtime } from '@displai/sdk';
 // Or if installed using the global script:
-const { runtime } = window.Raydiant;
+const { runtime } = window.Displai;
 
 // Subscribe to the runtime's 'play' event. This event will be
 // sent when your app becomes visible and whenever it loops.  
@@ -46,9 +46,9 @@ Using interrupt locks is useful when building an interactive kiosk app where you
 Use the `addIdleListener` method to automatically lock the app when a user interacts with your app.
 
 ```js
-import { runtime } from '@raydiant/sdk';
+import { runtime } from '@displai/sdk';
 // Or if installed using the global script:
-const { runtime } = window.Raydiant;
+const { runtime } = window.Displai;
 
 // Defaults (add listener to document with 30s idle time).
 runtime.addIdleListener();
@@ -68,7 +68,7 @@ runtime.addIdleListener(containerEl, 5, (idle) => { ... });
 For more control you can manually request a lock with the `acquireInterruptLock` method. The lock will automatically release after 1 minute unless renewed.
 
 ```js
-import { runtime } from '@raydiant/sdk';
+import { runtime } from '@displai/sdk';
 
 // Request a lock. The lock will release after 1 minute unless renewed.
 const lock = await runtime.acquireInterruptLock();
@@ -82,6 +82,6 @@ await lock.release();
 
 ## Next Steps
 
-- [How to install the Raydiant SDK](/docs/raydiant-sdk/installation)
+- [How to install the Displai SDK](/docs/displai-sdk/installation)
 - [Learn how to add support for dynamic durations](/docs/core-concepts/duration-mode)
-- [Check out the DevTools API](/docs/raydiant-sdk/devtools)
+- [Check out the DevTools API](/docs/displai-sdk/devtools)

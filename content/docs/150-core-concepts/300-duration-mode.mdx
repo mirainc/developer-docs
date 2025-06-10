@@ -5,7 +5,7 @@ excerpt: When your app moves to the next presentation in the playlist.
 
 When your app is in a playlist, the amount of time it is visible before moving on to the next presentation in the playlist is called the duration.
 
-Raydiant apps support two different duration modes; _fixed_ and _dynamic_. 
+Displai apps support two different duration modes; _fixed_ and _dynamic_. 
 
 ## Fixed Duration
 
@@ -26,7 +26,7 @@ The duration of a _dynamic_ duration app **cannot** be known upfront. A dynamic 
 - A live stream or meeting has ended
 - After 10 news articles have been cycled through
 
-Since the runtime is unable to determine the duration of a dynamic duration app, you must use the [Raydiant SDK](/docs/raydiant-sdk) to notify the runtime when your app has completed.
+Since the runtime is unable to determine the duration of a dynamic duration app, you must use the [Displai SDK](/docs/displai-sdk) to notify the runtime when your app has completed.
 
 ```js
 video.addEventListener('ended', () => {
@@ -38,4 +38,4 @@ video.addEventListener('ended', () => {
 ## Next Steps
 
 - [Check out our Simple Video sample app for an example](/docs/get-started/sample-apps/video)
-- [Learn how to use the Raydiant SDK's runtime API](/docs/raydiant-sdk/runtime)
+- [Learn how to use the Displai SDK's runtime API](/docs/displai-sdk/runtime)

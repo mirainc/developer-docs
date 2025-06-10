@@ -10,9 +10,9 @@ export const coreConcepts = createPath(
   () => `/docs/core-concepts`,
 );
 
-export const raydiantSdk = createPath(
-  '/docs/raydiant-sdk',
-  () => `/docs/raydiant-sdk`,
+export const displaiSdk = createPath(
+  '/docs/displai-sdk',
+  () => `/docs/displai-sdk`,
 );
 
 export const onBrandMenuApi = createPath(

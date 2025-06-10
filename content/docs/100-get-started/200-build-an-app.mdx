@@ -3,21 +3,21 @@ title: Build an App
 excerpt: A quick tutorial that covers the basics of building your first app.
 ---
 
-This tutorial will walk you through the basics of building a Raydiant app. We’ll use the [Weather](https://simple-weather-raydiant-app.vercel.app/?location=New%20York) app to set up its inputs and preview the app in the Raydiant Dashboard.
+This tutorial will walk you through the basics of building a Displai app. We’ll use the [Weather](https://simple-weather-app.displai.ai/?location=New%20York) app to set up its inputs and preview the app in the Displai Dashboard.
 
 You won’t need to write any code but there are instructions for deploying the weather app at the end of the tutorial if you’d like to use it as a starting point for building your own app.
 
 ## 1. Before We Start
 
-Before you can create your first app you will need to [create an account](/docs/get-started/create-an-account) to access the Developer Portal and the Raydiant Dashboard.
+Before you can create your first app you will need to [create an account](/docs/get-started/create-an-account) to access the Developer Portal and the Displai Dashboard.
 
-Once you have an account, sign in to the [Developer Portal](https://developers.raydiant.com) to begin the tutorial.
+Once you have an account, sign in to the [Developer Portal](https://developers.displai.ai) to begin the tutorial.
 
 ## 2. Create the App
 
-From the [Apps](https://developers.raydiant.com/apps) section, we’ll start by creating the Weather app and adding an icon and thumbnail.
+From the [Apps](https://developers.displai.ai/apps) section, we’ll start by creating the Weather app and adding an icon and thumbnail.
 
-1. Click the “Create app” button <RaydiantIcon name="add" />.
+1. Click the “Create app” button <DisplaiIcon name="add" />.
 2. Set the name of the app to “Weather”.
 3. Set the description of the app to “Display local weather from around the world.”
 4. Set the app ID to something unique like `alices-weather`
@@ -28,46 +28,46 @@ From the [Apps](https://developers.raydiant.com/apps) section, we’ll start by 
 Next, let’s set up your app’s URL template and a location input to allow users to type in their city.
 
 ```bash
- https://simple-weather-raydiant-app.vercel.app?location=:location&units=:units
+ https://simple-weather-app.displai.ai?location=:location&units=:units
 ```
 
 1. Set the URL template of the app to the URL above.
 
    The `:location` in the URL template is where the value of your location input will be injected before loading the app in a playlist.
 
-2. Click the add button <RaydiantIcon name="add" /> in the “Inputs” section below “URL Template”.
+2. Click the add button <DisplaiIcon name="add" /> in the “Inputs” section below “URL Template”.
 3. Add a new _text_ input.
 4. Set the name of the input to “Location”.
 5. Set the input ID to `location`.
 6. Set an initial value of “New York”.
-7. Click the “Close” button <RaydiantIcon name="close" /> at the top right of the input.
+7. Click the “Close” button <DisplaiIcon name="close" /> at the top right of the input.
 
 ## 4. Add a Units Input
 
 Now that we’ve added the location input let’s add a units input to allow users to swap between Fahrenheit and Celsius.
 
-1. Click the add button <RaydiantIcon name="add" /> in the “Inputs” section.
+1. Click the add button <DisplaiIcon name="add" /> in the “Inputs” section.
 2. Add a new _Button Group_ input.
 3. Set the name of the input to “Units”.
 4. Set the input ID to `units`. Remember that this needs to have a corresponding `:units` in your URL template.
-5. Click the add options button <RaydiantIcon name="add" /> next to the “Options” section.
+5. Click the add options button <DisplaiIcon name="add" /> next to the “Options” section.
 6. Add an option with label “Fahrenheit” and value `fahrenheit`.
 7. Click “Set Default”.
-8. Click the add options button <RaydiantIcon name="add" /> again next to the “Options” section.
+8. Click the add options button <DisplaiIcon name="add" /> again next to the “Options” section.
 9. Add an option with label “Celsius” and value `celsius`.
-10. Click the “Close” button <RaydiantIcon name="close" /> at the top right of the input.
+10. Click the “Close” button <DisplaiIcon name="close" /> at the top right of the input.
 
 ## 5. Save & Preview
 
-Now we’re ready to preview your Weather app in the Raydiant Dashboard.
+Now we’re ready to preview your Weather app in the Displai Dashboard.
 
 1. Click “Save” to create your new Weather app.
-2. Go to your Library in the [Raydiant Dashboard](https://dash.raydiant.com/library).
+2. Go to your Library in the [Displai Dashboard](https://dash.displai.ai/library).
 3. Click Weather” app to open the presentation builder.
 
-Congrats, you just built a Raydiant app!
+Congrats, you just built a Displai app!
 
-You can save new versions of your app in the Developer Portal and any changes will show up in the Raydiant Dashboard’s presentation builder after you refresh the page.
+You can save new versions of your app in the Developer Portal and any changes will show up in the Displai Dashboard’s presentation builder after you refresh the page.
 
 **Bonus step:** Add some helper text to the _Location_ input to provide some examples of cities.
 
@@ -81,7 +81,7 @@ We’ll show you how to deploy using [Vercel](https://vercel.com) but the [sourc
 2. Go to OpenWeather’s [API keys section](https://home.openweathermap.org/api_keys) to grab your key.
 3. Click this below “Deploy" button to deploy the Weather app to your own Vercel account.
 
-   <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmirainc%2Fsimple-weather-app&env=OPENWEATHERMAP_API_KEY&envDescription=OpenWeather%20API%20key&envLink=https%3A%2F%2Fhome.openweathermap.org%2F&redirect-url=https%3A%2F%2Fdevelopers.raydiant.com%2Fdocs%2Fget-started%2Fbuild-an-app">
+   <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmirainc%2Fsimple-weather-app&env=OPENWEATHERMAP_API_KEY&envDescription=OpenWeather%20API%20key&envLink=https%3A%2F%2Fhome.openweathermap.org%2F&redirect-url=https%3A%2F%2Fdevelopers.displai.ai%2Fdocs%2Fget-started%2Fbuild-an-app">
      <img src="https://vercel.com/button" alt="Deploy with Vercel" />
    </a>
 
@@ -93,5 +93,5 @@ After Vercel finishes deploying you will have your very own app URL you can use 
 
 - [How to develop locally and test your app](/docs/get-started/development)
 - [Browse the available input types](/docs/core-concepts/inputs)
-- [Learn how Raydiant apps work when running in a playlist](/docs/core-concepts/app-lifecycle)
+- [Learn how Displai apps work when running in a playlist](/docs/core-concepts/app-lifecycle)
 - [Check out our collection of sample apps](/docs/get-started/sample-apps)
