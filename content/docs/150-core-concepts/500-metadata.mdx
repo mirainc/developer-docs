@@ -9,14 +9,14 @@ Similar to [Inputs](/docs/core-concepts/inputs), you can receive metadata throug
 
 ## `:$deviceId`
 
-When your application is running on a ScreenRay device you can receive the device ID via your app’s URL with the `:$deviceId` metadata parameter.
+When your application is running on a device you can receive the device ID via your app’s URL with the `:$deviceId` metadata parameter.
 
 ```
 https://my-app.com/:$deviceId/content
 https://my-app.com?device=:$deviceId
 ```
 
-The `:$deviceId` parameter can be part of the URL path or the query string and when your app is running on a ScreenRay device, it will be replaced with the actual device ID (in most cases this will be the mac address).
+The `:$deviceId` parameter can be part of the URL path or the query string and when your app is running on a device, it will be replaced with the actual device ID (in most cases this will be the mac address).
 
 ### Dashboard Previews
 
@@ -38,7 +38,7 @@ You can use the existence of `:$deviceId` in the URL to serve default content wh
 
 ## `:$renderMode`
 
-You can use the `:$renderMode` metadata to know if you’re app is being rendered in the Dashboard preview or on a ScreenRay device. 
+You can use the `:$renderMode` metadata to know if you’re app is being rendered in the Dashboard preview or on a device. 
 
 ```
 https://my-app.com?renderMode=:$renderMode
@@ -46,7 +46,7 @@ https://my-app.com?renderMode=:$renderMode
 
 This can be used to provide helpful messaging to the user when configuring the app in the Displai Dashboard, or for disabling certain features of your app when it is not running on an actual device.
 
-When your app is loaded on a ScreenRay device `:$renderMode` will be replaced with `live` and when loaded in the Dashboard preview it will be replaced with `preview`.
+When your app is loaded on a device `:$renderMode` will be replaced with `live` and when loaded in the Dashboard preview it will be replaced with `preview`.
 
 ```
 https://my-app.com?renderMode=live # when loaded on a device
