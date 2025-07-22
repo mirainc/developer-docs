@@ -1,0 +1,72 @@
+---
+title: List Devices
+excerpt: Retrieve registered devices.
+---
+
+## `GET /devices`
+
+Retrieve info about all registered devices with ability to filter by online status or retrieve specific devices by id.
+
+## Authentication
+
+Set the `Authorization` header to `Bearer {API Key}`.
+
+**Scopes**: `device:read`
+
+## Query Parameters
+
+<SimpleTable
+  headers={['Parameter', 'Description']}
+  rows={[
+    [<code>is_online</code>, <span>Filter for only online (<code>&is_online=true</code>) or offline (<code>&is_online=false</code>) devices. Offline devices are devices that have not sent a heartbeat in the last 5 minutes.</span>],
+    [<code>ids</code>, <span>Filter for devices that match the provided device id(s). Use a comma separated list to search for multiple devices (ie <code>&ids=C4:23:60:91:C0:6C,E0:8F:4C:18:0F:51</code>).</span>],
+    [<code>page</code>, <span>The page number of the results. Defaults to <code>1</code>.</span>],
+    [<code>page_size</code>, <span>The page size of the results. Defaults to <code>100</code> with a maximum of <code>1000</code>.</span>]
+  ]}
+/>
+
+## Responses
+
+### `200 (OK)`
+
+The devices were successfully retrieved. 
+
+```json
+{
+  "total": 100,
+  "data": [
+    {
+      "id": "C4:23:60:91:C0:6C",
+      "name": "Front Lobby",
+      "timezone": "America/Los_Angeles",
+      "screen_resolution": "1920x1080",
+      "screen_orientation": "normal",
+      "registered_at": "2024-03-21T17:51:45.732391Z",
+      "published_at": "2025-01-15T08:21:49.219648Z",
+      "last_heartbeat_at": "2024-01-15T17:08:27.219444Z",
+      "is_online": true,
+      "offline_startup": true,
+      "offline_startup_delay_minutes": 1,
+      "open_dev_tools": false,
+      "updated_at": "2025-01-15T15:20:15.955849Z",
+      "created_at": "2024-03-21T17:51:45.70569Z",
+    },
+    ...
+  ]
+}
+```
+
+### `403 (Forbidden)`
+
+The API key does not have the `device:read` scope.
+
+```json
+{
+  "message": "Invalid scopes"
+}
+```
+
+## Next Steps
+
+- [Publish Device](/docs/displai-api/devices/publish-device)
+- [Update Device](/docs/displai-api/devices/update-device)
